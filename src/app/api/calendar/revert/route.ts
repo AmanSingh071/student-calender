@@ -24,6 +24,28 @@ async function removeWithRetry(calendar:any,eventId:string){
  throw new Error("Google Calendar is temporarily rate-limiting requests. Please try again in a minute.");
 }
 
+async function findStudentCalendarEvents(calendar:any){
+ const ids=new Set<string>();
+ let pageToken:string|undefined;
+ do{
+  const result=await calendar.events.list({
+   calendarId:"primary",
+   showDeleted:false,
+   singleEvents:false,
+   maxResults:2500,
+   pageToken,
+   timeMin:"2020-01-01T00:00:00Z",
+   timeMax:"2035-12-31T23:59:59Z"
+  });
+  for(const event of result.data.items||[]){
+   const props=event.extendedProperties?.private||{};
+   if(event.id&&(props.studentCalendarSourceKey||props.studentCalendarApp==="student-calendar"))ids.add(event.id);
+  }
+  pageToken=result.data.nextPageToken||undefined;
+ }while(pageToken);
+ return ids;
+}
+
 export async function POST(request:NextRequest){
  try{
   const id=request.cookies.get("student_sync_id")?.value;
@@ -36,26 +58,25 @@ export async function POST(request:NextRequest){
   auth.setCredentials(credentials);
   const calendar=google.calendar({version:"v3",auth});
 
-  // Delete every event tracked by this app in this request. The profile is
-  // only cleared after all deletes succeed, so a revert can safely be retried.
-  const tracked=[...profile.events];
+  // Do not rely only on Supabase. Older imports can still exist in Google
+  // Calendar even if their saved IDs were lost or overwritten.
+  const ids=await findStudentCalendarEvents(calendar);
+  for(const event of profile.events){if(event.eventId)ids.add(event.eventId);}
+
   let removed=0;
-  for(const event of tracked){
-   if(event.eventId)await removeWithRetry(calendar,event.eventId);
+  for(const eventId of ids){
+   await removeWithRetry(calendar,eventId);
    removed++;
   }
-  profile.events=[];
 
-  // Once every app-created event is gone, also clear the saved choices
-  // and disable automatic syncing. The Google connection itself remains available.
-  if(profile.events.length===0){
-   profile.selected=[];
-   profile.sections={};
-   profile.enabled=false;
-   profile.lastSyncAt=undefined;
-   profile.lastError=undefined;
-   profile.sourceHash=undefined;
-  }
+  // Reset the complete Student Calendar state only after deletion succeeds.
+  profile.events=[];
+  profile.selected=[];
+  profile.sections={};
+  profile.enabled=false;
+  profile.lastSyncAt=undefined;
+  profile.lastError=undefined;
+  profile.sourceHash=undefined;
   profile.updatedAt=new Date().toISOString();
   await saveProfile(profile);
 
