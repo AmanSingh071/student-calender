@@ -77,7 +77,7 @@ export async function POST(request:NextRequest){
     description:input.description,
     start:{dateTime:input.start},
     end:{dateTime:input.end},
-    extendedProperties:{private:{studentCalendarSourceKey:sourceKey}},
+    extendedProperties:{private:{studentCalendarSourceKey:sourceKey,studentCalendarApp:"student-calendar"}},
     ...(input.recurrence?.length?{recurrence:input.recurrence}:{})
    };
    let eventId=previous?.eventId;
