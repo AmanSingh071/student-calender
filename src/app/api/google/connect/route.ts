@@ -5,18 +5,33 @@ export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   const origin = request.nextUrl.origin;
-  // Use the same host that set the OAuth state cookie. A hard-coded host can send Google back to a different domain and make state validation fail.\n  const redirectUri = `${origin}/api/auth/callback/google`;
+
+  // Keep the OAuth callback on the same host that started the login,
+  // so the state cookie is available when Google redirects back.
+  const redirectUri = `${origin}/api/auth/callback/google`;
+
   if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     return NextResponse.redirect(new URL("/?google=config-error", origin));
   }
+
   const state = crypto.randomUUID();
-  const client = new google.auth.OAuth2(process.env.GOOGLE_CLIENT_ID, process.env.GOOGLE_CLIENT_SECRET, redirectUri);
+  const client = new google.auth.OAuth2(
+    process.env.GOOGLE_CLIENT_ID,
+    process.env.GOOGLE_CLIENT_SECRET,
+    redirectUri
+  );
+
   const url = client.generateAuthUrl({
     access_type: "offline",
     prompt: "consent",
-    scope: ["openid","https://www.googleapis.com/auth/userinfo.email","https://www.googleapis.com/auth/calendar.events"],
+    scope: [
+      "openid",
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/calendar.events"
+    ],
     state
   });
+
   const response = NextResponse.redirect(url);
   response.cookies.set("oauth_state", state, {
     httpOnly: true,
@@ -25,5 +40,6 @@ export async function GET(request: NextRequest) {
     maxAge: 600,
     path: "/"
   });
+
   return response;
 }
