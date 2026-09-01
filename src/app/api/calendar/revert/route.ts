@@ -36,10 +36,15 @@ export async function POST(request:NextRequest){
   auth.setCredentials(credentials);
   const calendar=google.calendar({version:"v3",auth});
 
-  // Work in small chunks to avoid Google Calendar rate limits.
-  const chunk=profile.events.slice(0,10);
-  for(const event of chunk){if(event.eventId)await removeWithRetry(calendar,event.eventId)}
-  profile.events=profile.events.slice(chunk.length);
+  // Delete every event tracked by this app in this request. The profile is
+  // only cleared after all deletes succeed, so a revert can safely be retried.
+  const tracked=[...profile.events];
+  let removed=0;
+  for(const event of tracked){
+   if(event.eventId)await removeWithRetry(calendar,event.eventId);
+   removed++;
+  }
+  profile.events=[];
 
   // Once every app-created event is gone, also clear the saved choices
   // and disable automatic syncing. The Google connection itself remains available.
@@ -54,7 +59,7 @@ export async function POST(request:NextRequest){
   profile.updatedAt=new Date().toISOString();
   await saveProfile(profile);
 
-  return NextResponse.json({ok:true,removed:chunk.length,remaining:profile.events.length,complete:profile.events.length===0});
+  return NextResponse.json({ok:true,removed,remaining:0,complete:true});
  }catch(error){
   return NextResponse.json({ok:false,error:error instanceof Error?error.message:"Could not revert the calendar changes."},{status:500});
  }
