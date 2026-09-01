@@ -90,7 +90,7 @@ export default function Home(){
    teacher:"Dr Sanja Pattnayak",subject:"Pricing Strategy",score:100
   }];
   setMatches(demo);
-  setNotice("Confirmed example loaded: PS + Dr Sanja Pattnayak = Pricing Strategy, Section 1.");
+  setNotice("Confirmed example loaded: PS 1 + Prof. Sanja Samirana Pattnayak = PRICING STRATEGY, Section 1.");
  }
 
  const progress=sync?.total?Math.round((sync.current/sync.total)*100):0;
@@ -121,7 +121,7 @@ export default function Home(){
   <section className="wrap hero">
    <div className="eyebrow"><Sparkles size={15}/> PERSONAL TERM V SCHEDULE</div>
    <h1>Your subjects.<br/><span>Your calendar.</span></h1>
-   <p>Select the subjects you registered for. We will match them against the official college timetable using subject codes, sections and faculty names.</p>
+   <p>Select the exact Term V subjects you registered for. We will match them against the official college timetable using subject names, sections and faculty names.</p>
    <div className="steps"><span><b className="done">✓</b> 1 · Google connected</span><i></i><span><b>2</b> Choose subjects</span><i></i><span><b>3</b> Verify timetable</span><i></i><span><b>4</b> Import calendar</span></div>
   </section>
 
@@ -131,8 +131,9 @@ export default function Home(){
     <div className="subjectGrid">
      {subjects.map(s=>{const on=selected.includes(s.id);return <button key={s.id} className={"subject "+(on?"active":"")} onClick={()=>toggle(s.id)}>
       <span className="tick">{on?<Check size={16}/>:null}</span>
-      <strong>{s.name}</strong><small>{s.teacher||"College faculty allocation"}</small>
-      <em>Timetable code: {s.code}</em>
+      <strong>{s.name}</strong>
+      <small>{s.teacher||"Faculty not applicable"}</small>
+      <em>{s.department} · Match code: {s.code}</em>
      </button>})}
     </div>
    </div>
