@@ -60,8 +60,24 @@ export async function POST(request:NextRequest){
 
   // Do not rely only on Supabase. Older imports can still exist in Google
   // Calendar even if their saved IDs were lost or overwritten.
-  const ids=await findStudentCalendarEvents(calendar);
-  for(const event of profile.events){if(event.eventId)ids.add(event.eventId);}
+  // Start with IDs tracked in the user's profile. This is fast and covers
+  // previous imports. Then search only for the permanent app marker used by
+  // newer imports instead of scanning the user's entire calendar.
+  const ids=new Set<string>();
+  for(const event of profile.events||[]){if(event.eventId)ids.add(event.eventId);}
+  let pageToken:string|undefined;
+  do{
+   const result=await calendar.events.list({
+    calendarId:"primary",
+    privateExtendedProperty:"studentCalendarApp=student-calendar",
+    showDeleted:false,
+    singleEvents:false,
+    maxResults:250,
+    pageToken
+   });
+   for(const event of result.data.items||[]){if(event.id)ids.add(event.id);}
+   pageToken=result.data.nextPageToken||undefined;
+  }while(pageToken);
 
   let removed=0;
   for(const eventId of ids){
