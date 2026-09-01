@@ -1,34 +1,48 @@
-export type Subject={id:string;name:string;teacher:string;code:string;sections?:string[]};
+export type Subject={
+ id:string;
+ name:string;
+ teacher:string;
+ department:string;
+ code:string;
+ sections?:string[];
+};
 
 export const subjects:Subject[]=[
-{id:"aa1",name:"Advanced Analytics-I",teacher:"Dr. Kiran Kumar Paidipati",code:"AA-I"},
-{id:"ppam",name:"Predictive to Prescriptive Analytics for Managers",teacher:"Prof. Vandana",code:"PPAM"},
-{id:"famd",name:"Financial Analytics for Managerial Decision-Making",teacher:"Dr. Srikanta King",code:"FAMD"},
-{id:"fmi",name:"Financial Markets and Institutions",teacher:"Prof. Sanjay Pareek / VF",code:"FMI"},
-{id:"frm",name:"Financial Risk Management",teacher:"Prof. Bhanu Pratap Singh",code:"FRM"},
-{id:"impa",name:"Investment Management and Portfolio Analysis",teacher:"VF",code:"IMPA"},
-{id:"ma",name:"Mergers and Acquisitions",teacher:"Prof. Sanjay Pareek / VF",code:"MA"},
-{id:"cis2",name:"Course of Independent Study-II",teacher:"",code:"CIS-II"},
-{id:"neg",name:"Negotiation Management",teacher:"Dr. Rinki Dahiya",code:"NM"},
-{id:"perf",name:"Performance Management",teacher:"Prof. Parul Malik",code:"PERM"},
-{id:"aibi",name:"Artificial Intelligence and Business Integration",teacher:"Dr. Urvashi Rathod / Dr. Kirtikiran Balakumar",code:"AIBI"},
-{id:"ets",name:"Emerging Technologies for Sustainability",teacher:"Dr. Sonali Shankar",code:"ETS"},
-{id:"mlba",name:"Machine Learning with Business Applications",teacher:"Dr. Alekh Gour",code:"MLBA"},
-{id:"pfa",name:"Python for Analytics: Foundations to GenAI",teacher:"Dr. Alekh Gour",code:"PFA"},
-{id:"amr",name:"Advanced Marketing Research",teacher:"Prof. Devika Vashisht",code:"AMR"},
-{id:"ams",name:"Advanced Marketing Strategy",teacher:"Dr. Amit Anand Tiwari",code:"AMS"},
-{id:"b2b",name:"B2B Marketing",teacher:"Dr. Shashi",code:"B2B"},
-{id:"pricing",name:"Pricing Strategy",teacher:"Prof. Sanja Samirana Pattnayak",code:"PS",sections:["1","2","3"]},
-{id:"promo",name:"Promotion Strategy",teacher:"Dr. Vikas Kumar",code:"PMS"},
-{id:"sdm",name:"Sales and Distribution Management",teacher:"Dr. Karthikeyan Balakumar / VF",code:"SDM"},
-{id:"project",name:"Project Management",teacher:"Prof. Mohita Sharma / Dr. Manish Sarkhel",code:"PJM"},
-{id:"scas",name:"Supply Chain Analytics and Strategy",teacher:"Prof. M Pachayappan",code:"SCAS"},
-{id:"mc",name:"Management Consulting",teacher:"Prof. Praga Bhawsar",code:"MC"},
-{id:"mppp",name:"Managing Public-Private Partnerships",teacher:"Prof. Ashish Goel",code:"MPPP"},
-{id:"esm",name:"Event and Sport Management",teacher:"Dr. Vikrant Kaushal",code:"ESM"}
+ {id:"aa1",name:"ADVANCED ANALYTICS-I",teacher:"Dr. Kiran Kumar Paidipati",department:"Decision Sciences",code:"AA-I"},
+ {id:"ppam",name:"PREDICTIVE TO PRESCRIPTIVE ANALYTICS FOR MANAGERS",teacher:"Prof. Vandana",department:"Decision Sciences",code:"PPAM"},
+ {id:"famd",name:"FINANCIAL ANALYTICS FOR MANAGERIAL DECISION-MAKING",teacher:"Dr. Srikanta Kundu",department:"Finance and Accounting",code:"FAMD"},
+ {id:"fmi",name:"FINANCIAL MARKETS AND INSTITUTIONS",teacher:"Prof. Sanjay Pareek / VF",department:"Finance and Accounting",code:"FMI"},
+ {id:"frm",name:"FINANCIAL RISK MANAGEMENT",teacher:"Prof. Bhanu Pratap Singh",department:"Finance and Accounting",code:"FRM"},
+ {id:"impa",name:"INVESTMENT MANAGEMENT AND PORTFOLIO ANALYSIS",teacher:"VF",department:"Finance and Accounting",code:"IMPA"},
+ {id:"ma",name:"MERGERS AND ACQUISITIONS",teacher:"Prof. Sanjay Pareek / VF",department:"Finance and Accounting",code:"MA"},
+ {id:"cis2",name:"COURSE OF INDEPENDENT STUDY-II",teacher:"",department:"General Management",code:"CIS-II"},
+ {id:"dissertation2",name:"DISSERTATION (PART-2)",teacher:"",department:"General Management",code:"DISSERTATION-II"},
+ {id:"neg",name:"NEGOTIATION MANAGEMENT",teacher:"Dr. Rinki Dahiya",department:"Human Resource Management",code:"NM"},
+ {id:"perf",name:"PERFORMANCE MANAGEMENT",teacher:"Prof. Parul Malik",department:"Human Resource Management",code:"PERM"},
+ {id:"aibi",name:"AGENTIC AI AND BUSINESS INTEGRATION",teacher:"Dr. Urvashi Rathod / Dr. Karthikeyan Balakumar",department:"Information Technology and Systems",code:"AIBI"},
+ {id:"ets",name:"EMERGING TECHNOLOGIES FOR SUSTAINABILITY",teacher:"Dr. Sonali Shankar",department:"Information Technology and Systems",code:"ETS"},
+ {id:"mlba",name:"MACHINE LEARNING WITH BUSINESS APPLICATIONS",teacher:"Dr. Alekh Gour",department:"Information Technology and Systems",code:"MLBA"},
+ {id:"pfa",name:"PYTHON FOR ANALYTICS: FOUNDATIONS TO GenAI",teacher:"Dr. Alekh Gour",department:"Information Technology and Systems",code:"PFA"},
+ {id:"amr",name:"ADVANCED MARKETING RESEARCH",teacher:"Prof. Devika Vashisht",department:"Marketing",code:"AMR"},
+ {id:"ams",name:"ADVANCED MARKETING STRATEGY",teacher:"Dr. Amit Anand Tiwari",department:"Marketing",code:"AMS"},
+ {id:"b2b",name:"B2B MARKETING",teacher:"Dr. Shashi",department:"Marketing",code:"B2B"},
+ {id:"pricing",name:"PRICING STRATEGY",teacher:"Prof. Sanja Samirana Pattnayak",department:"Marketing",code:"PS",sections:["1","2","3"]},
+ {id:"promo",name:"PROMOTION STRATEGY",teacher:"Dr. Vikas Kumar",department:"Marketing",code:"PMS"},
+ {id:"sdm",name:"SALES AND DISTRIBUTION MANAGEMENT",teacher:"Dr. Karthikeyan Balakumar / VF",department:"Marketing",code:"SDM"},
+ {id:"project",name:"PROJECT MANAGEMENT",teacher:"Prof. Mohita Sharma / Dr. Manish Sarkhel",department:"Operations Management",code:"PJM"},
+ {id:"scas",name:"SUPPLY CHAIN ANALYTICS AND STRATEGY",teacher:"Prof. M. Pachayappan",department:"Operations Management",code:"SCAS"},
+ {id:"mc",name:"MANAGEMENT CONSULTING",teacher:"PROF. PRAGYA BHAWSAR",department:"Strategic Management",code:"MC"},
+ {id:"mppp",name:"MANAGING PUBLIC PRIVATE PARTNERSHIPS",teacher:"Prof. Ashish Goel",department:"Strategic Management",code:"MPPP"},
+ {id:"esm",name:"EVENT AND SPORT MANAGEMENT",teacher:"Dr. Vikrant Kaushal",department:"Tourism Management",code:"ESM"}
 ];
 
-export function normalize(v:string){return v.toUpperCase().replace(/DR\.?|PROF\.?|MR\.?|MS\.?/g,"").replace(/[^A-Z0-9 ]/g," ").replace(/\s+/g," ").trim()}
+export function normalize(v:string){
+ return v.toUpperCase()
+  .replace(/DR\.?|PROF\.?|MR\.?|MS\.?/g,"")
+  .replace(/[^A-Z0-9 ]/g," ")
+  .replace(/\s+/g," ")
+  .trim();
+}
 
 export function matchSubject(rawCode:string,teacher:string){
  const c=normalize(rawCode),t=normalize(teacher);
