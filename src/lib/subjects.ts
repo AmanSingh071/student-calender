@@ -28,7 +28,7 @@ export const subjects:Subject[]=[
  {id:"pfa",name:"PYTHON FOR ANALYTICS: FOUNDATIONS TO GenAI",teacher:"Dr. Alekh Gour",department:"Information Technology and Systems",code:"PFA"},
  {id:"amr",name:"ADVANCED MARKETING RESEARCH",teacher:"Prof. Devika Vashisht",department:"Marketing",code:"AMR"},
  {id:"ams",name:"ADVANCED MARKETING STRATEGY",teacher:"Dr. Amit Anand Tiwari",department:"Marketing",code:"AMS"},
- {id:"b2b",name:"B2B MARKETING",teacher:"Dr. Shashi",department:"Marketing",code:"B2B"},
+ {id:"b2b",name:"B2B MARKETING",teacher:"Dr. Shashi",department:"Marketing",code:"B2B",sections:["A","B"]},
  {id:"pricing",name:"PRICING STRATEGY",teacher:"Prof. Sanja Samirana Pattnayak",department:"Marketing",code:"PS",sections:["A","B"]},
  {id:"promo",name:"PROMOTION STRATEGY",teacher:"Dr. Vikas Kumar",department:"Marketing",code:"PMS"},
  {id:"sdm",name:"SALES AND DISTRIBUTION MANAGEMENT",teacher:"Dr. Karthikeyan Balakumar / VF",department:"Marketing",code:"SDM"},
