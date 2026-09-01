@@ -20,6 +20,7 @@ export type SyncProfile={
   updatedAt:string;
   lastSyncAt?:string;
   lastError?:string;
+  sourceHash?:string;
 };
 
 function key(){
@@ -51,5 +52,5 @@ export async function getProfile(id:string){
   return await kv.get<SyncProfile>(`sync:user:${id}`);
 }
 export async function listProfileIds(){
-  return await kv.smembers<string[]>("sync:users") || [];
+  return await kv.smembers<string>("sync:users") || [];
 }
