@@ -16,7 +16,9 @@
     "next-auth": "^4.24.15",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "@supabase/supabase-js": "^2.49.8"
+    "@supabase/supabase-js": "^2.49.8",
+    "puppeteer-core": "^24.16.0",
+    "@sparticuz/chromium": "^138.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
