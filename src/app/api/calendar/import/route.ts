@@ -2,7 +2,7 @@ import { google } from "googleapis";
 import { NextRequest,NextResponse } from "next/server";
 import { decrypt, getProfile, saveProfile, SyncEvent } from "@/lib/sync-store";
 
-type EventInput={sourceKey?:string;summary:string;description?:string;start:string;end:string};
+type EventInput={sourceKey?:string;summary:string;description?:string;start:string;end:string;recurrence?:string[]};
 
 export async function POST(request:NextRequest){
  try{
@@ -29,7 +29,8 @@ export async function POST(request:NextRequest){
     description:input.description,
     start:{dateTime:input.start},
     end:{dateTime:input.end},
-    extendedProperties:{private:{studentCalendarSourceKey:sourceKey}}
+    extendedProperties:{private:{studentCalendarSourceKey:sourceKey}},
+    ...(input.recurrence?.length?{recurrence:input.recurrence}:{})
    };
    let eventId=previous?.eventId;
    if(eventId){
