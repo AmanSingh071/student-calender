@@ -23,7 +23,8 @@ export default function Home(){
   fetch("/api/auth/status").then(r=>r.json()).then(x=>setGoogleConnected(Boolean(x.connected))).catch(()=>{}).finally(()=>setCheckingGoogle(false));
   const p=new URLSearchParams(window.location.search).get("google");
   if(p==="connected")setNotice("Google Calendar connected successfully. Your account is ready for timetable syncing.");
-  if(p==="error")setNotice("Google connection was cancelled or could not be completed.");
+  if(p==="error")setNotice("Google connection was cancelled or Google rejected the request. Please try again.");
+  if(p==="config-error")setNotice("Google Calendar is not configured on the server yet. Add GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in Vercel, then redeploy.");
  },[]);
 
  useEffect(()=>{
@@ -99,11 +100,12 @@ export default function Home(){
  if(!googleConnected)return <main className="connectPage">
   <section className="connectCard">
    <div className="connectIcon"><CalendarDays size={34}/></div>
-   <div className="eyebrow"><Sparkles size={15}/> STUDENT CALENDAR · TERM V</div>
-   <h1>Connect Google first.<br/><span>Then build your schedule.</span></h1>
-   <p>Connect your Google account securely before selecting subjects. Once your timetable is verified, your classes can be synced directly into your Google Calendar.</p>
-   <button className="primary connectPrimary" onClick={connectGoogle}><CalendarDays size={19}/> Connect Google Calendar</button>
-   <div className="connectPoints"><span><Check size={15}/> Secure Google OAuth</span><span><Check size={15}/> You control calendar import</span><span><Check size={15}/> Sync progress shown live</span></div>
+   <div className="eyebrow"><Sparkles size={15}/> STEP 1 OF 4 · TERM V SETUP</div>
+   <h1>Start by connecting<br/><span>your Google Calendar.</span></h1>
+   <p>This takes a few seconds. After connecting, you will choose your registered subjects, select sections where needed, review your timetable and then import it.</p>
+   <div className="flowMini"><span className="flowActive">1 · Connect Google</span><span>2 · Choose subjects</span><span>3 · Verify timetable</span><span>4 · Import classes</span></div>
+   <button className="primary connectPrimary" onClick={connectGoogle}><CalendarDays size={19}/> Continue with Google</button>
+   <div className="connectPoints"><span><Check size={15}/> Opens Google's secure sign-in</span><span><Check size={15}/> No classes imported yet</span></div>
   </section>
   {notice&&<div className="connectNotice">{notice}</div>}
   {sync&&<SyncOverlay sync={sync} elapsed={elapsed} progress={progress}/>}
@@ -120,7 +122,7 @@ export default function Home(){
    <div className="eyebrow"><Sparkles size={15}/> PERSONAL TERM V SCHEDULE</div>
    <h1>Your subjects.<br/><span>Your calendar.</span></h1>
    <p>Select the subjects you registered for. We will match them against the official college timetable using subject codes, sections and faculty names.</p>
-   <div className="steps"><span><b className="done">✓</b> Google connected</span><i></i><span><b>2</b> Select subjects</span><i></i><span><b>3</b> Import calendar</span></div>
+   <div className="steps"><span><b className="done">✓</b> 1 · Google connected</span><i></i><span><b>2</b> Choose subjects</span><i></i><span><b>3</b> Verify timetable</span><i></i><span><b>4</b> Import calendar</span></div>
   </section>
 
   <section className="wrap grid">
