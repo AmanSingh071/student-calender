@@ -101,12 +101,16 @@ export default function Home(){
   setSync({mode:"importing",startedAt,current:0,total:matches.length});
   setNotice("");
   try{
+   const pref=await fetch("/api/sync/configure",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({selected,sections})});
+   const prefData=await pref.json();
+   if(!pref.ok)throw new Error(prefData.error||"Could not enable automatic syncing");
    for(let i=0;i<matches.length;i++){
     const m=matches[i];
     setSync({mode:"importing",startedAt,current:i,total:matches.length});
     const event={
      summary:m.subject||m.code,
      description:`${m.code}${m.section?" · Section "+m.section:""} · ${m.teacher}`,
+     sourceKey:`${m.code}|${m.section||""}|${m.day}|${m.start}|${m.end}|${m.teacher}`,
      start:new Date(Date.now()+86400000).toISOString(),
      end:new Date(Date.now()+86400000+3600000).toISOString()
     };
@@ -115,7 +119,7 @@ export default function Home(){
     if(!r.ok)throw new Error(x.error||"Calendar import failed");
     setSync({mode:"importing",startedAt,current:i+1,total:matches.length});
    }
-   setNotice(`${matches.length} verified event(s) imported into your Google Calendar.`);
+   setNotice(`${matches.length} verified event(s) imported. Automatic syncing is now enabled for your selected subjects; timetable changes will be checked by the sync service.`);
   }catch(e:any){setNotice(e.message||"Calendar import failed")}
   finally{setTimeout(()=>setSync(null),500)}
  }
@@ -194,11 +198,18 @@ export default function Home(){
 
   {notice&&<section className="wrap"><div className="notice"><Check size={18}/>{notice}</div></section>}
 
-  {matches.length>0&&<section className="wrap panel preview"><div className="panelHead"><div><h2>Matched timetable preview</h2><p>Only verified or reviewable matches will be shown here.</p></div><div style={{display:"flex",gap:10,alignItems:"center"}}><span className="verified"><ShieldCheck size={16}/> Verified example</span><button className="primary importBtn" onClick={importCalendar}><CalendarDays size={16}/> Import to Google Calendar</button></div></div>
+  {matches.length>0&&<section className="wrap panel preview"><div className="panelHead"><div><h2>Matched timetable preview</h2><p>Review your classes first. Import is the final step below.</p></div><span className="verified"><ShieldCheck size={16}/> Verified example</span></div>
    {matches.map((m,i)=><div className="match" key={i}><div className="dateBox"><CalendarDays size={20}/></div><div><strong>{m.subject}</strong><p>{m.code}{m.section?" · Section "+m.section:""} · {m.teacher}</p></div><span className="confidence">100% confirmed</span></div>)}
   </section>}
 
   {raw&&<section className="wrap panel raw"><details><summary>View raw response from the official timetable source <ChevronRight size={17}/></summary><pre>{raw.slice(0,60000)}</pre></details></section>}
+
+  <section className="wrap panel finalImport">
+   <div className="sideTitle"><span className="stepNo">4</span><div><h2>Import & keep in sync</h2><p>Your selected timetable will be connected to Google Calendar.</p></div></div>
+   <div className="syncPromise"><RefreshCw size={18}/><div><strong>Automatic sync enabled after import</strong><span>When the official timetable changes, the sync service checks your selected subjects and updates the connected calendar events where supported by the official timetable data.</span></div></div>
+   <button className="primary importBtn" onClick={importCalendar} disabled={matches.length===0||loading}><CalendarDays size={18}/> Import to Google Calendar & enable sync</button>
+   <small>{matches.length===0?"Fetch and verify your timetable before importing.":"This is the final step. Your subject choices are saved for future synchronization."}</small>
+  </section>
 
   <footer><div className="wrap">Student Calendar · Term V · Subject matching before calendar import</div></footer>
  </main>
