@@ -7,6 +7,9 @@ export type Subject={
  sections?:string[];
 };
 
+// Section choices are populated only for timetable entries that expose a section.
+// The timetable uses letter sections (for example A/B), not numeric sections.
+
 export const subjects:Subject[]=[
  {id:"aa1",name:"ADVANCED ANALYTICS-I",teacher:"Dr. Kiran Kumar Paidipati",department:"Decision Sciences",code:"AA-I"},
  {id:"ppam",name:"PREDICTIVE TO PRESCRIPTIVE ANALYTICS FOR MANAGERS",teacher:"Prof. Vandana",department:"Decision Sciences",code:"PPAM"},
@@ -26,7 +29,7 @@ export const subjects:Subject[]=[
  {id:"amr",name:"ADVANCED MARKETING RESEARCH",teacher:"Prof. Devika Vashisht",department:"Marketing",code:"AMR"},
  {id:"ams",name:"ADVANCED MARKETING STRATEGY",teacher:"Dr. Amit Anand Tiwari",department:"Marketing",code:"AMS"},
  {id:"b2b",name:"B2B MARKETING",teacher:"Dr. Shashi",department:"Marketing",code:"B2B"},
- {id:"pricing",name:"PRICING STRATEGY",teacher:"Prof. Sanja Samirana Pattnayak",department:"Marketing",code:"PS",sections:["1","2","3"]},
+ {id:"pricing",name:"PRICING STRATEGY",teacher:"Prof. Sanja Samirana Pattnayak",department:"Marketing",code:"PS",sections:["A","B"]},
  {id:"promo",name:"PROMOTION STRATEGY",teacher:"Dr. Vikas Kumar",department:"Marketing",code:"PMS"},
  {id:"sdm",name:"SALES AND DISTRIBUTION MANAGEMENT",teacher:"Dr. Karthikeyan Balakumar / VF",department:"Marketing",code:"SDM"},
  {id:"project",name:"PROJECT MANAGEMENT",teacher:"Prof. Mohita Sharma / Dr. Manish Sarkhel",department:"Operations Management",code:"PJM"},
