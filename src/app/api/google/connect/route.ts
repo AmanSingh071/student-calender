@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   const origin = request.nextUrl.origin;
-  const redirectUri = "https://student-calendar-beta.vercel.app/api/auth/callback/google";
+  // Use the same host that set the OAuth state cookie. A hard-coded host can send Google back to a different domain and make state validation fail.\n  const redirectUri = `${origin}/api/auth/callback/google`;
   if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     return NextResponse.redirect(new URL("/?google=config-error", origin));
   }
