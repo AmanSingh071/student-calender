@@ -45,10 +45,20 @@ export default function Home(){
    if(!found.length)throw new Error("No dated timetable events were found for your selected subjects. Your choices were saved, but nothing was imported.");
    setMatches(found);setSync({mode:"importing",startedAt:Date.now(),current:0,total:found.length});
    const events=found.map(m=>({summary:m.subject,description:[m.code,m.section?"Section "+m.section:"",m.teacher].filter(Boolean).join(" · "),sourceKey:[m.code,m.section||"",m.start,m.end,m.teacher,(m.recurrence||[]).join(",")].join("|"),start:m.start,end:m.end,recurrence:m.recurrence}));
-   const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events})});
-   const x=await r.json();if(!r.ok)throw new Error(x.error||"Calendar import failed");
-   setSync({mode:"importing",startedAt:Date.now(),current:found.length,total:found.length});
-   setNotice(x.created+" class/event(s) imported to Google Calendar. Automatic sync is enabled for future official timetable changes.");
+   // Import in small batches so a large timetable cannot hit a single Vercel request timeout.
+   const batchSize=25;
+   let completed=0;
+   let created=0;
+   for(let i=0;i<events.length;i+=batchSize){
+    const batch=events.slice(i,i+batchSize);
+    const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events:batch})});
+    const x=await r.json();
+    if(!r.ok)throw new Error(x.error||"Calendar import failed");
+    created+=Number(x.created||0);
+    completed+=batch.length;
+    setSync({mode:"importing",startedAt:Date.now(),current:completed,total:found.length});
+   }
+   setNotice(created+" class/event(s) imported to Google Calendar. Automatic sync is enabled for future official timetable changes.");
   }catch(e:any){setNotice(e.message||"Calendar import failed")}
   finally{setTimeout(()=>setSync(null),700)}
  }
@@ -57,7 +67,7 @@ export default function Home(){
  if(!googleConnected)return <main className="connectPage"><section className="connectCard"><div className="connectIcon"><CalendarDays size={34}/></div><div className="eyebrow"><Sparkles size={15}/> TERM V SETUP</div><h1>Start by connecting<br/><span>your Google Calendar.</span></h1><p>Connect once, choose your subjects, and import your classes.</p><button className="primary connectPrimary" onClick={connectGoogle}><CalendarDays size={19}/> Continue with Google</button></section>{notice&&<div className="connectNotice">{notice}</div>}</main>;
 
  return <main>
-  {sync&&<div className="syncOverlay"><div className="syncCard"><Loader2 className="spin" size={34}/><div className="syncLabel">{sync.mode==="importing"?"IMPORTING TO GOOGLE CALENDAR":"CONNECTING GOOGLE"}</div><h2>{sync.mode==="importing"?"Reading your timetable and importing classes…":"Opening secure Google sign-in…"}</h2>{sync.mode==="importing"&&sync.total>0&&<p>{sync.current} of {sync.total} events completed</p>}</div></div>}
+  {sync&&<div className="syncOverlay"><div className="syncCard"><Loader2 className="spin" size={34}/><div className="syncLabel">{sync.mode==="importing"?"IMPORTING TO GOOGLE CALENDAR":"CONNECTING GOOGLE"}</div><h2>{sync.mode==="importing"?sync.total>0?`Importing ${sync.current} of ${sync.total} classes…`:"Reading your timetable…":"Opening secure Google sign-in…"}</h2>{sync.mode==="importing"&&sync.total>0&&<p>{sync.current} of {sync.total} events completed</p>}</div></div>}
   <header className="topbar"><div className="wrap nav"><div className="brand"><span className="brandIcon"><GraduationCap size={23}/></span><span><b>Student Calendar</b><small>Google Calendar connected</small></span></div><span className="google connected">✓ Google Calendar Connected</span></div></header>
   <section className="wrap hero"><div className="eyebrow"><Sparkles size={15}/> PERSONAL TERM V SCHEDULE</div><h1>Your subjects.<br/><span>Your calendar.</span></h1><p>Select the subjects you registered for. Sections appear directly below a subject only when that subject has multiple sections.</p></section>
   <section className="wrap grid single"><div className="panel"><div className="panelHead"><div><h2>Choose your subjects</h2><p>{selected.length} selected from Term V</p></div><button className="linkBtn" onClick={()=>setSelected(selected.length===subjects.length?[]:subjects.map(s=>s.id))}>{selected.length===subjects.length?"Clear all":"Select all"}</button></div>
