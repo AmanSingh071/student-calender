@@ -37,6 +37,13 @@ export default function Home(){
   if(missing.length){setNotice("Choose your section for: "+missing.map(s=>s.code).join(", "));return}
   setNotice("");setSync({mode:"importing",startedAt:Date.now(),current:0,total:0});
   try{
+   // Repair earlier bad imports first. Only events created and tracked by this app are removed.
+   while(true){
+    const cleanRes=await fetch("/api/calendar/reset",{method:"POST"});
+    const clean=await cleanRes.json();
+    if(!cleanRes.ok)throw new Error(clean.error||"Could not clean the previous imported timetable");
+    if(!clean.remaining)break;
+   }
    const [prefRes,timeRes]=await Promise.all([
     fetch("/api/sync/configure",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({selected,sections})}),
     fetch("/api/timetable",{cache:"no-store"})
@@ -48,7 +55,7 @@ export default function Home(){
    setMatches(found);setSync({mode:"importing",startedAt:Date.now(),current:0,total:found.length});
    const events=found.map(m=>({summary:m.subject,description:[m.code,m.section?"Section "+m.section:"",m.teacher].filter(Boolean).join(" · "),sourceKey:[m.code,m.section||"",m.start,m.end,m.teacher,(m.recurrence||[]).join(",")].join("|"),start:m.start,end:m.end,recurrence:m.recurrence}));
    // Import in small batches so a large timetable cannot hit a single Vercel request timeout.
-   const batchSize=25;
+   const batchSize=10;
    let completed=0;
    let created=0;
    for(let i=0;i<events.length;i+=batchSize){
