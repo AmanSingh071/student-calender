@@ -18,7 +18,7 @@ export async function POST(request:NextRequest){
   auth.setCredentials(credentials);
   const calendar=google.calendar({version:"v3",auth});
   const existing=new Map(profile.events.map(e=>[e.sourceKey,e]));
-  const saved:SyncEvent[]=[];
+  const saved:SyncEvent[]=profile.events.filter(e=>!events.some(input=>(input.sourceKey||"")===e.sourceKey));
 
   for(let i=0;i<events.length;i++){
    const input=events[i];
