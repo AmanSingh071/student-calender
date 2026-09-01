@@ -21,6 +21,8 @@ export default function Home(){
   const p=new URLSearchParams(location.search).get("google");
   if(p==="connected")setNotice("Google Calendar connected. Now choose your subjects and import.");
   if(p==="error")setNotice("Google connection was cancelled or rejected. Please try again.");
+  if(p==="state-error")setNotice("Google sign-in session expired or returned to a different website address. Please start the connection again.");
+  if(p==="callback-error")setNotice("Google accepted the sign-in, but the app could not save the connection. Please try again.");
  },[]);
 
  const chosen=useMemo(()=>subjects.filter(s=>selected.includes(s.id)),[selected]);
