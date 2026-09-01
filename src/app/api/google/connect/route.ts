@@ -3,22 +3,28 @@ import { NextRequest, NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(request: NextRequest) {
-  const origin = request.nextUrl.origin;
+// This is the single production URL registered in Google Cloud OAuth.
+const APP_ORIGIN = "https://student-calendar-beta.vercel.app";
+const REDIRECT_URI = `${APP_ORIGIN}/api/auth/callback/google`;
 
-  // Keep the OAuth callback on the same host that started the login,
-  // so the state cookie is available when Google redirects back.
-  const redirectUri = `${origin}/api/auth/callback/google`;
+export async function GET(request: NextRequest) {
+  const currentOrigin = request.nextUrl.origin;
+
+  // Never start OAuth on a deployment/preview URL. Move to the canonical domain
+  // first so the OAuth state cookie and callback always use the same host.
+  if (currentOrigin !== APP_ORIGIN) {
+    return NextResponse.redirect(new URL("/api/google/connect", APP_ORIGIN));
+  }
 
   if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
-    return NextResponse.redirect(new URL("/?google=config-error", origin));
+    return NextResponse.redirect(new URL("/?google=config-error", APP_ORIGIN));
   }
 
   const state = crypto.randomUUID();
   const client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID,
     process.env.GOOGLE_CLIENT_SECRET,
-    redirectUri
+    REDIRECT_URI
   );
 
   const url = client.generateAuthUrl({
@@ -35,11 +41,10 @@ export async function GET(request: NextRequest) {
   const response = NextResponse.redirect(url);
   response.cookies.set("oauth_state", state, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure: true,
     sameSite: "lax",
     maxAge: 600,
     path: "/"
   });
-
   return response;
 }
