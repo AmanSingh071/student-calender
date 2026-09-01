@@ -1,11 +1,11 @@
 "use client";
 
 import {useEffect,useMemo,useState} from "react";
-import {CalendarDays,Check,GraduationCap,Loader2,RefreshCw,Sparkles} from "lucide-react";
+import {CalendarDays,Check,GraduationCap,Loader2,RefreshCw,RotateCcw,Sparkles} from "lucide-react";
 import {subjects,normalize} from "@/lib/subjects";
 
 type Match={day?:string;start:string;end:string;code:string;section?:string;teacher:string;subject:string;recurrence?:string[]};
-type SyncState={mode:"connecting"|"importing";startedAt:number;current:number;total:number};
+type SyncState={mode:"connecting"|"importing"|"reverting";startedAt:number;current:number;total:number};
 
 export default function Home(){
  const [selected,setSelected]=useState<string[]>([]);
@@ -29,6 +29,27 @@ export default function Home(){
  const availableSections=(id:string)=>subjects.find(s=>s.id===id)?.sections||[];
  const toggle=(id:string)=>setSelected(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id]);
  function connectGoogle(){setSync({mode:"connecting",startedAt:Date.now(),current:0,total:0});location.href="https://student-calendar-beta.vercel.app/api/google/connect"}
+
+ async function revertCalendar(){
+  if(!confirm("Revert your timetable changes? This will remove only the events created by Student Calendar, clear your saved subject and section choices, and turn off automatic sync. Your personal Google Calendar events will not be touched."))return;
+  setNotice("");setSync({mode:"reverting",startedAt:Date.now(),current:0,total:0});
+  try{
+   while(true){
+    const r=await fetch("/api/calendar/revert",{method:"POST"});
+    const x=await r.json();
+    if(!r.ok)throw new Error(x.error||"Could not revert the timetable changes");
+    if(!x.remaining)break;
+   }
+   setSelected([]);
+   setSections({});
+   setMatches([]);
+   setNotice("All Student Calendar timetable changes were reverted. App-created timetable events were removed and automatic sync was turned off.");
+  }catch(e:any){
+   setNotice(e.message||"Could not revert the timetable changes");
+  }finally{
+   setTimeout(()=>setSync(null),700);
+  }
+ }
 
  async function importCalendar(){
   if(!googleConnected){connectGoogle();return}
@@ -76,7 +97,7 @@ export default function Home(){
  if(!googleConnected)return <main className="connectPage"><section className="connectCard"><div className="connectIcon"><CalendarDays size={34}/></div><div className="eyebrow"><Sparkles size={15}/> TERM V SETUP</div><h1>Start by connecting<br/><span>your Google Calendar.</span></h1><p>Connect once, choose your subjects, and import your classes.</p><button className="primary connectPrimary" onClick={connectGoogle}><CalendarDays size={19}/> Continue with Google</button></section>{notice&&<div className="connectNotice">{notice}</div>}</main>;
 
  return <main>
-  {sync&&<div className="syncOverlay"><div className="syncCard"><Loader2 className="spin" size={34}/><div className="syncLabel">{sync.mode==="importing"?"IMPORTING TO GOOGLE CALENDAR":"CONNECTING GOOGLE"}</div><h2>{sync.mode==="importing"?sync.total>0?`Importing ${sync.current} of ${sync.total} classes…`:"Reading your timetable…":"Opening secure Google sign-in…"}</h2>{sync.mode==="importing"&&sync.total>0&&<p>{sync.current} of {sync.total} events completed</p>}</div></div>}
+  {sync&&<div className="syncOverlay"><div className="syncCard"><Loader2 className="spin" size={34}/><div className="syncLabel">{sync.mode==="importing"?"IMPORTING TO GOOGLE CALENDAR":sync.mode==="reverting"?"REVERTING CALENDAR CHANGES":"CONNECTING GOOGLE"}</div><h2>{sync.mode==="importing"?sync.total>0?`Importing ${sync.current} of ${sync.total} classes…`:"Reading your timetable…":sync.mode==="reverting"?"Removing Student Calendar events and restoring your setup…":"Opening secure Google sign-in…"}</h2>{sync.mode==="importing"&&sync.total>0&&<p>{sync.current} of {sync.total} events completed</p>}</div></div>}
   <header className="topbar"><div className="wrap nav"><div className="brand"><span className="brandIcon"><GraduationCap size={23}/></span><span><b>Student Calendar</b><small>Google Calendar connected</small></span></div><span className="google connected">✓ Google Calendar Connected</span></div></header>
   <section className="wrap hero"><div className="eyebrow"><Sparkles size={15}/> PERSONAL TERM V SCHEDULE</div><h1>Your subjects.<br/><span>Your calendar.</span></h1><p>Select the subjects you registered for. Sections appear directly below a subject only when that subject has multiple sections.</p></section>
   <section className="wrap grid single"><div className="panel"><div className="panelHead"><div><h2>Choose your subjects</h2><p>{selected.length} selected from Term V</p></div><button className="linkBtn" onClick={()=>setSelected(selected.length===subjects.length?[]:subjects.map(s=>s.id))}>{selected.length===subjects.length?"Clear all":"Select all"}</button></div>
@@ -84,7 +105,7 @@ export default function Home(){
   </div></section>
   {notice&&<section className="wrap"><div className="notice"><Check size={18}/>{notice}</div></section>}
   {matches.length>0&&<section className="wrap panel preview"><div className="panelHead"><div><h2>Imported timetable</h2><p>{matches.length} events matched from the official source.</p></div></div>{matches.slice(0,20).map((m,i)=><div className="match" key={i}><div className="dateBox"><CalendarDays size={20}/></div><div><strong>{m.subject}</strong><p>{m.code}{m.section?" · Section "+m.section:""} · {m.teacher}</p></div></div>)}</section>}
-  <section className="wrap panel finalImport"><div className="sideTitle"><span className="stepNo">2</span><div><h2>Import to Google Calendar</h2><p>We automatically fetch the latest official timetable when you import.</p></div></div><div className="syncPromise"><RefreshCw size={18}/><div><strong>Always uses the latest college timetable</strong><span>Your selected subjects and sections are matched automatically. Future changes can be synced to your calendar.</span></div></div><button className="primary importBtn" onClick={importCalendar} disabled={!selected.length}><CalendarDays size={18}/> Import & enable automatic sync</button></section>
+  <section className="wrap panel finalImport"><div className="sideTitle"><span className="stepNo">2</span><div><h2>Import to Google Calendar</h2><p>We automatically fetch the latest official timetable when you import.</p></div></div><div className="syncPromise"><RefreshCw size={18}/><div><strong>Always uses the latest college timetable</strong><span>Your selected subjects and sections are matched automatically. Future changes can be synced to your calendar.</span></div></div><div className="importActions"><button className="primary importBtn" onClick={importCalendar} disabled={!selected.length}><CalendarDays size={18}/> Import & enable automatic sync</button><button className="revertBtn" onClick={revertCalendar}><RotateCcw size={17}/> Revert all timetable changes</button></div></section>
  </main>
 }
 
