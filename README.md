@@ -42,3 +42,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 <!-- GitHub auto-deploy trigger 2026-09-01T20:50:40.931Z -->
 <!-- Fresh deploy test after reconnect 2026-09-01T20:54:49.896Z -->
 <!-- Deploy fix 2026-09-01T20:59:02.896Z -->
+<!-- Deployment trigger via merged PR -->
