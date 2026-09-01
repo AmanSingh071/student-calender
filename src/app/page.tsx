@@ -10,6 +10,7 @@ type SyncState={mode:"connecting"|"importing";startedAt:number;current:number;to
 export default function Home(){
  const [selected,setSelected]=useState<string[]>([]);
  const [sections,setSections]=useState<Record<string,string>>({});
+ const [timetableSections,setTimetableSections]=useState<Record<string,string[]>>({});
  const [loading,setLoading]=useState(false);
  const [raw,setRaw]=useState("");
  const [matches,setMatches]=useState<Match[]>([]);
@@ -20,6 +21,23 @@ export default function Home(){
  const [elapsed,setElapsed]=useState(0);
 
  useEffect(()=>{
+  fetch("/api/timetable").then(r=>r.json()).then(x=>{
+   if(!x.ok)return;
+   const rows=extractRows(x.data??x.text);
+   const map:Record<string,string[]>={};
+   for(const row of rows){
+    const code=String(row.code||row.subjectcode||row.subject_code||row.subject||row.course||"");
+    const section=String(row.section||row.Section||"").trim().toUpperCase();
+    if(!section)continue;
+    const subject=subjects.find(s=>sameCode(code,s.code));
+    if(subject){
+      const letters=section.match(/[A-Z]/g)||[];
+      const valid=letters.filter(v=>v==="A"||v==="B");
+      if(valid.length)map[subject.id]=Array.from(new Set([...(map[subject.id]||[]),...valid]));
+    }
+   }
+   setTimetableSections(map);
+  }).catch(()=>{});
   fetch("/api/auth/status").then(r=>r.json()).then(x=>setGoogleConnected(Boolean(x.connected))).catch(()=>{}).finally(()=>setCheckingGoogle(false));
   const p=new URLSearchParams(window.location.search).get("google");
   if(p==="connected")setNotice("Google Calendar connected successfully. Your account is ready for timetable syncing.");
@@ -43,7 +61,8 @@ export default function Home(){
   }
   return [...v,id];
  });
- const sectionSubjects=chosen.filter(s=>s.sections?.length);
+ const availableSections=(id:string)=>timetableSections[id]||subjects.find(s=>s.id===id)?.sections||[];
+ const sectionSubjects=chosen.filter(s=>availableSections(s.id).length);
  const fmt=(seconds:number)=>seconds<60?`${seconds}s`:`${Math.floor(seconds/60)}m ${seconds%60}s`;
 
  function connectGoogle(){
@@ -60,7 +79,17 @@ export default function Home(){
    const source=x.data??x.text??"";
    const text=typeof source==="string"?source:JSON.stringify(source,null,2);
    setRaw(text);
-   setNotice("Official timetable loaded. Next we will adapt the parser to the exact college format and verify every code using faculty names.");
+   const rows=extractRows(source);
+   const map:Record<string,string[]>={};
+   for(const row of rows){
+    const code=String(row.code||row.subjectcode||row.subject_code||row.subject||row.course||"");
+    const section=String(row.section||row.Section||"").trim().toUpperCase();
+    const subject=subjects.find(s=>sameCode(code,s.code));
+    const letters=(section.match(/[A-Z]/g)||[]).filter(v=>v==="A"||v==="B");
+    if(subject&&letters.length)map[subject.id]=Array.from(new Set([...(map[subject.id]||[]),...letters]));
+   }
+   setTimetableSections(map);
+   setNotice("Official timetable loaded. Section choices were detected from the timetable and are now shown only for subjects that have sections.");
   }catch(e:any){setNotice(e.message||"Could not load timetable")}
   finally{setLoading(false)}
  }
@@ -151,7 +180,7 @@ export default function Home(){
      {sectionSubjects.map(s=><div className="sectionRow" key={s.id}>
        <span>{s.name}</span>
        <div className="sectionOptions" role="group" aria-label={`Choose section for ${s.name}`}>
-        {s.sections!.map(x=><button type="button" key={x} className={sections[s.id]===x?"sectionChoice selected":"sectionChoice"} onClick={()=>setSections(v=>({...v,[s.id]:x}))}>Section {x}</button>)}
+        {availableSections(s.id).map(x=><button type="button" key={x} className={sections[s.id]===x?"sectionChoice selected":"sectionChoice"} onClick={()=>setSections(v=>({...v,[s.id]:x}))}>Section {x}</button>)}
        </div>
        {!sections[s.id]&&<small className="sectionHint">Choose your registered section to continue.</small>}
      </div>)}
@@ -177,6 +206,26 @@ export default function Home(){
 
   <footer><div className="wrap">Student Calendar · Term V · Subject matching before calendar import</div></footer>
  </main>
+}
+
+function extractRows(source:any):Record<string,any>[] {
+ const rows:Record<string,any>[]=[];
+ const walk=(v:any)=>{
+  if(Array.isArray(v))return v.forEach(walk);
+  if(v&&typeof v==="object"){
+   const keys=Object.keys(v).map(k=>k.toLowerCase());
+   if(keys.some(k=>k==="section")&&(keys.some(k=>k.includes("code"))||keys.some(k=>k.includes("subject")||k.includes("course"))))rows.push(v);
+   Object.values(v).forEach(walk);
+  }
+ };
+ if(typeof source==="string"){try{walk(JSON.parse(source))}catch{}}
+ else walk(source);
+ return rows;
+}
+function sameCode(raw:string,code:string){
+ const a=raw.toUpperCase().replace(/[^A-Z0-9]/g,"");
+ const b=code.toUpperCase().replace(/[^A-Z0-9]/g,"");
+ return a===b||a.startsWith(b)||a.includes(b);
 }
 
 function SyncOverlay({sync,elapsed,progress}:{sync:SyncState;elapsed:number;progress:number}){
