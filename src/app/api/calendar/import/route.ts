@@ -7,6 +7,21 @@ import { decrypt, getProfile, saveProfile, SyncEvent } from "@/lib/sync-store";
 
 type EventInput={sourceKey?:string;summary:string;description?:string;start:string;end:string;recurrence?:string[]};
 
+const sleep=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms));
+
+async function withRetry<T>(work:()=>Promise<T>):Promise<T>{
+ let last:any;
+ for(let attempt=0;attempt<6;attempt++){
+  try{return await work()}catch(error:any){
+   last=error;const status=error?.code||error?.response?.status;
+   if(status!==429&&status!==403&&status<500)throw error;
+   const retryAfter=Number(error?.response?.headers?.["retry-after"]||0);
+   await sleep(retryAfter>0?retryAfter*1000:Math.min(1000*2**attempt,8000));
+  }
+ }
+ throw last;
+}
+
 async function runWithConcurrency<T>(items:T[],limit:number,work:(item:T,index:number)=>Promise<void>){
  let next=0;
  const workers=Array.from({length:Math.min(limit,items.length)},async()=>{
@@ -39,7 +54,7 @@ export async function POST(request:NextRequest){
   const existing=new Map(profile.events.map(e=>[e.sourceKey,e]));
   const upserts:SyncEvent[]=new Array(events.length);
 
-  await runWithConcurrency(events,5,async(input,index)=>{
+  await runWithConcurrency(events,2,async(input,index)=>{
    const sourceKey=input.sourceKey||`manual:${index}:${input.summary}:${input.start}`;
    const previous=existing.get(sourceKey);
    const requestBody={
@@ -52,9 +67,9 @@ export async function POST(request:NextRequest){
    };
    let eventId=previous?.eventId;
    if(eventId){
-    await calendar.events.update({calendarId:"primary",eventId,requestBody});
+    await withRetry(()=>calendar.events.update({calendarId:"primary",eventId,requestBody}));
    }else{
-    const result=await calendar.events.insert({calendarId:"primary",requestBody});
+    const result=await withRetry(()=>calendar.events.insert({calendarId:"primary",requestBody}));
     eventId=result.data.id||undefined;
    }
    upserts[index]={...input,sourceKey,eventId};
