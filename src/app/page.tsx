@@ -1,10 +1,11 @@
 "use client";
 
 import {useEffect,useMemo,useState} from "react";
-import {CalendarDays,Check,ChevronRight,GraduationCap,Loader2,RefreshCw,ShieldCheck,Sparkles} from "lucide-react";
+import {CalendarDays,Check,ChevronRight,Clock3,GraduationCap,Loader2,RefreshCw,ShieldCheck,Sparkles} from "lucide-react";
 import {subjects} from "@/lib/subjects";
 
 type Match={day:string;start:string;end:string;code:string;section?:string;teacher:string;subject?:string;score?:number};
+type SyncState={mode:"connecting"|"importing";startedAt:number;current:number;total:number};
 
 export default function Home(){
  const [selected,setSelected]=useState<string[]>([]);
@@ -15,12 +16,32 @@ export default function Home(){
  const [notice,setNotice]=useState("");
  const [googleConnected,setGoogleConnected]=useState(false);
  const [checkingGoogle,setCheckingGoogle]=useState(true);
- const [importing,setImporting]=useState(false);
+ const [sync,setSync]=useState<SyncState|null>(null);
+ const [elapsed,setElapsed]=useState(0);
 
- useEffect(()=>{fetch("/api/auth/status").then(r=>r.json()).then(x=>setGoogleConnected(Boolean(x.connected))).catch(()=>{}).finally(()=>setCheckingGoogle(false)); const p=new URLSearchParams(window.location.search).get("google"); if(p==="connected")setNotice("Google Calendar connected successfully. You can now import verified timetable events."); if(p==="error")setNotice("Google connection was cancelled or could not be completed.");},[]);
+ useEffect(()=>{
+  fetch("/api/auth/status").then(r=>r.json()).then(x=>setGoogleConnected(Boolean(x.connected))).catch(()=>{}).finally(()=>setCheckingGoogle(false));
+  const p=new URLSearchParams(window.location.search).get("google");
+  if(p==="connected")setNotice("Google Calendar connected successfully. Your account is ready for timetable syncing.");
+  if(p==="error")setNotice("Google connection was cancelled or could not be completed.");
+ },[]);
+
+ useEffect(()=>{
+  if(!sync){setElapsed(0);return}
+  const tick=()=>setElapsed(Math.floor((Date.now()-sync.startedAt)/1000));
+  tick();
+  const id=window.setInterval(tick,250);
+  return()=>window.clearInterval(id);
+ },[sync]);
 
  const chosen=useMemo(()=>subjects.filter(s=>selected.includes(s.id)),[selected]);
  const toggle=(id:string)=>setSelected(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id]);
+ const fmt=(seconds:number)=>seconds<60?`${seconds}s`:`${Math.floor(seconds/60)}m ${seconds%60}s`;
+
+ function connectGoogle(){
+  setSync({mode:"connecting",startedAt:Date.now(),current:0,total:0});
+  window.location.href="/api/auth/google";
+ }
 
  async function fetchOfficial(){
   setLoading(true);setNotice("");
@@ -37,21 +58,29 @@ export default function Home(){
  }
 
  async function importCalendar(){
-  if(!googleConnected){window.location.href="/api/auth/google";return}
+  if(!googleConnected){connectGoogle();return}
   if(matches.length===0){setNotice("First fetch and verify your timetable. Only verified classes can be imported.");return}
-  setImporting(true);setNotice("");
+  const startedAt=Date.now();
+  setSync({mode:"importing",startedAt,current:0,total:matches.length});
+  setNotice("");
   try{
-   const events=matches.map(m=>({
-    summary:m.subject||m.code,
-    description:`${m.code}${m.section?" · Section "+m.section:""} · ${m.teacher}`,
-    start:new Date(Date.now()+86400000).toISOString(),
-    end:new Date(Date.now()+86400000+3600000).toISOString()
-   }));
-   const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events})});
-   const x=await r.json();
-   if(!r.ok)throw new Error(x.error||"Calendar import failed");
-   setNotice(`${x.created} verified event(s) imported into your Google Calendar.`);
-  }catch(e:any){setNotice(e.message||"Calendar import failed")}finally{setImporting(false)}
+   for(let i=0;i<matches.length;i++){
+    const m=matches[i];
+    setSync({mode:"importing",startedAt,current:i,total:matches.length});
+    const event={
+     summary:m.subject||m.code,
+     description:`${m.code}${m.section?" · Section "+m.section:""} · ${m.teacher}`,
+     start:new Date(Date.now()+86400000).toISOString(),
+     end:new Date(Date.now()+86400000+3600000).toISOString()
+    };
+    const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events:[event]})});
+    const x=await r.json();
+    if(!r.ok)throw new Error(x.error||"Calendar import failed");
+    setSync({mode:"importing",startedAt,current:i+1,total:matches.length});
+   }
+   setNotice(`${matches.length} verified event(s) imported into your Google Calendar.`);
+  }catch(e:any){setNotice(e.message||"Calendar import failed")}
+  finally{setTimeout(()=>setSync(null),500)}
  }
 
  function showDemoMatching(){
@@ -63,17 +92,35 @@ export default function Home(){
   setNotice("Confirmed example loaded: PS + Dr Sanja Pattnayak = Pricing Strategy, Section 1.");
  }
 
+ const progress=sync?.total?Math.round((sync.current/sync.total)*100):0;
+
+ if(checkingGoogle)return <main className="boot"><Loader2 className="spin" size={28}/><strong>Checking your Google Calendar connection…</strong></main>;
+
+ if(!googleConnected)return <main className="connectPage">
+  <section className="connectCard">
+   <div className="connectIcon"><CalendarDays size={34}/></div>
+   <div className="eyebrow"><Sparkles size={15}/> STUDENT CALENDAR · TERM V</div>
+   <h1>Connect Google first.<br/><span>Then build your schedule.</span></h1>
+   <p>Connect your Google account securely before selecting subjects. Once your timetable is verified, your classes can be synced directly into your Google Calendar.</p>
+   <button className="primary connectPrimary" onClick={connectGoogle}><CalendarDays size={19}/> Connect Google Calendar</button>
+   <div className="connectPoints"><span><Check size={15}/> Secure Google OAuth</span><span><Check size={15}/> You control calendar import</span><span><Check size={15}/> Sync progress shown live</span></div>
+  </section>
+  {notice&&<div className="connectNotice">{notice}</div>}
+  {sync&&<SyncOverlay sync={sync} elapsed={elapsed} progress={progress}/>}
+ </main>;
+
  return <main>
+  {sync&&<SyncOverlay sync={sync} elapsed={elapsed} progress={progress}/>}
   <header className="topbar"><div className="wrap nav">
-   <div className="brand"><span className="brandIcon"><GraduationCap size={23}/></span><span><b>Student Calendar</b><small>Term V timetable assistant</small></span></div>
-   <button className="google" disabled={checkingGoogle} onClick={()=>{if(googleConnected){setNotice("Google Calendar is connected. Calendar import will become available when verified timetable events are ready.")}else{window.location.href="/api/auth/google"}}}>{checkingGoogle?"Checking Google…":googleConnected?"Google Calendar Connected":"Connect Google Calendar"}</button>
+   <div className="brand"><span className="brandIcon"><GraduationCap size={23}/></span><span><b>Student Calendar</b><small>Google Calendar connected</small></span></div>
+   <button className="google connected" onClick={()=>setNotice("Google Calendar is connected and ready to receive verified classes.")}>✓ Google Calendar Connected</button>
   </div></header>
 
   <section className="wrap hero">
    <div className="eyebrow"><Sparkles size={15}/> PERSONAL TERM V SCHEDULE</div>
    <h1>Your subjects.<br/><span>Your calendar.</span></h1>
    <p>Select the subjects you registered for. We will match them against the official college timetable using subject codes, sections and faculty names.</p>
-   <div className="steps"><span><b>1</b> Select subjects</span><i></i><span><b>2</b> Match timetable</span><i></i><span><b>3</b> Import calendar</span></div>
+   <div className="steps"><span><b className="done">✓</b> Google connected</span><i></i><span><b>2</b> Select subjects</span><i></i><span><b>3</b> Import calendar</span></div>
   </section>
 
   <section className="wrap grid">
@@ -106,7 +153,7 @@ export default function Home(){
 
   {notice&&<section className="wrap"><div className="notice"><Check size={18}/>{notice}</div></section>}
 
-  {matches.length>0&&<section className="wrap panel preview"><div className="panelHead"><div><h2>Matched timetable preview</h2><p>Only verified or reviewable matches will be shown here.</p></div><div style={{display:"flex",gap:10,alignItems:"center"}}><span className="verified"><ShieldCheck size={16}/> Verified example</span><button className="primary importBtn" onClick={importCalendar} disabled={importing}>{importing?<Loader2 className="spin" size={16}/>:<CalendarDays size={16}/>} {importing?"Importing…":"Import to Google Calendar"}</button></div></div>
+  {matches.length>0&&<section className="wrap panel preview"><div className="panelHead"><div><h2>Matched timetable preview</h2><p>Only verified or reviewable matches will be shown here.</p></div><div style={{display:"flex",gap:10,alignItems:"center"}}><span className="verified"><ShieldCheck size={16}/> Verified example</span><button className="primary importBtn" onClick={importCalendar}><CalendarDays size={16}/> Import to Google Calendar</button></div></div>
    {matches.map((m,i)=><div className="match" key={i}><div className="dateBox"><CalendarDays size={20}/></div><div><strong>{m.subject}</strong><p>{m.code}{m.section?" · Section "+m.section:""} · {m.teacher}</p></div><span className="confidence">100% confirmed</span></div>)}
   </section>}
 
@@ -114,4 +161,18 @@ export default function Home(){
 
   <footer><div className="wrap">Student Calendar · Term V · Subject matching before calendar import</div></footer>
  </main>
+}
+
+function SyncOverlay({sync,elapsed,progress}:{sync:SyncState;elapsed:number;progress:number}){
+ const importing=sync.mode==="importing";
+ return <div className="syncOverlay" role="status" aria-live="polite">
+  <div className="syncCard">
+   <div className="syncSpinner"><Loader2 className="spin" size={34}/></div>
+   <div className="syncLabel">{importing?"SYNCING TO GOOGLE CALENDAR":"CONNECTING GOOGLE ACCOUNT"}</div>
+   <h2>{importing?"Importing your verified classes…":"Opening secure Google sign-in…"}</h2>
+   <p>{importing?"Please keep this tab open while each class is safely added to your calendar.":"You will be redirected to Google to choose and authorize your account."}</p>
+   {importing&&<><div className="progressTrack"><span style={{width:`${progress}%`}}/></div><div className="syncStats"><strong>{sync.current} of {sync.total} classes</strong><span>{progress}% complete</span></div></>}
+   <div className="elapsed"><Clock3 size={16}/> {importing?"Sync time":"Elapsed time"}: {elapsed<60?`${elapsed}s`:`${Math.floor(elapsed/60)}m ${elapsed%60}s`}</div>
+  </div>
+ </div>
 }
