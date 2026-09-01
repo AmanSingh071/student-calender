@@ -48,7 +48,7 @@ function parsePayload(text:string):unknown{
  }
  const rows=parseHtmlTables(trimmed);
  if(rows.length)return rows;
- throw new Error("Official timetable response could not be parsed as JSON or an HTML timetable table");
+ if(/functionNames|google\\.script\\.run|sandboxFrame|userHtml/.test(trimmed)&&/getSheetData/.test(trimmed))throw new Error("The official timetable URL is an interactive Google Apps Script page, not a data API. It exposes the rows only through its getSheetData browser RPC, so a server cannot reliably read the timetable from this URL alone.");\n throw new Error("Official timetable response could not be parsed as JSON or an HTML timetable table");
 }
 export async function fetchOfficialTimetable(){
  const response=await fetch(SOURCE,{
