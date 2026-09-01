@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import crypto from "crypto";
 
-export type SyncEvent={sourceKey:string;summary:string;description?:string;start:string;end:string;eventId?:string};
+export type SyncEvent={sourceKey:string;summary:string;description?:string;start:string;end:string;recurrence?:string[];eventId?:string};
 export type SyncProfile={id:string;token:string;selected:string[];sections:Record<string,string>;events:SyncEvent[];enabled:boolean;updatedAt:string;lastSyncAt?:string;lastError?:string;sourceHash?:string};
 
 function supabase(){
