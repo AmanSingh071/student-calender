@@ -16,7 +16,7 @@
     "next-auth": "^4.24.15",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "@vercel/kv": "^3.0.0"
+    "@supabase/supabase-js": "^2.49.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
