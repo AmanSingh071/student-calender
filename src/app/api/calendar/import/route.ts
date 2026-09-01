@@ -9,6 +9,18 @@ type EventInput={sourceKey?:string;summary:string;description?:string;start:stri
 
 const sleep=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms));
 
+// Google Calendar color IDs. A subject always receives the same color,
+// so different subjects are easy to distinguish while the same subject
+// stays visually consistent across the timetable.
+const CALENDAR_COLOR_IDS=["1","2","3","4","5","6","7","8","9","10","11"];
+
+function colorForSubject(sourceKey:string,summary:string){
+ const subject=sourceKey.includes("|")?sourceKey.split("|")[0]:summary;
+ let hash=0;
+ for(let i=0;i<subject.length;i++)hash=(hash*31+subject.charCodeAt(i))|0;
+ return CALENDAR_COLOR_IDS[Math.abs(hash)%CALENDAR_COLOR_IDS.length];
+}
+
 async function withRetry<T>(work:()=>Promise<T>):Promise<T>{
  let last:any;
  for(let attempt=0;attempt<6;attempt++){
@@ -59,6 +71,7 @@ export async function POST(request:NextRequest){
    const previous=existing.get(sourceKey);
    const requestBody={
     summary:input.summary,
+    colorId:colorForSubject(sourceKey,input.summary),
     description:input.description,
     start:{dateTime:input.start},
     end:{dateTime:input.end},
