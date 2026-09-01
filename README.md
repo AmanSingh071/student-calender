@@ -39,3 +39,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 <!-- Git deployment trigger for latest calendar fixes -->
 <!-- Trigger GitHub deployment: full calendar revert fix -->
+<!-- GitHub auto-deploy trigger 2026-09-01T20:50:40.931Z -->
