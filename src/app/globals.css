@@ -21,3 +21,5 @@
 .syncStats{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}.syncStats strong{color:var(--ink)}
 .elapsed{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:center;align-items:center;gap:7px;font-size:13px;font-weight:800;color:#526079}
 @media(max-width:600px){.connectPage{padding:28px 14px}.connectCard{padding:38px 22px;border-radius:24px}.connectPoints{align-items:flex-start;flex-direction:column;margin-left:auto;margin-right:auto;width:max-content;max-width:100%}.syncCard{padding:28px 20px}}
+
+.flowMini{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:25px auto 4px}.flowMini span{padding:8px 10px;border-radius:999px;background:#f3f5f9;color:#647089;font-size:11px;font-weight:800}.flowMini .flowActive{background:#eaf0ff;color:var(--blue)}
