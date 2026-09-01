@@ -14,7 +14,7 @@ export default function Home(){
  const [matches,setMatches]=useState<Match[]>([]);
  const [notice,setNotice]=useState("");
  const [googleConnected,setGoogleConnected]=useState(false);
- const [checkingGoogle,setCheckingGoogle]=useState(true);
+ const [checkingGoogle,setCheckingGoogle]=useState(true);\n const [importing,setImporting]=useState(false);
 
  useEffect(()=>{fetch("/api/auth/status").then(r=>r.json()).then(x=>setGoogleConnected(Boolean(x.connected))).catch(()=>{}).finally(()=>setCheckingGoogle(false)); const p=new URLSearchParams(window.location.search).get("google"); if(p==="connected")setNotice("Google Calendar connected successfully. You can now import verified timetable events."); if(p==="error")setNotice("Google connection was cancelled or could not be completed.");},[]);
 
@@ -33,6 +33,24 @@ export default function Home(){
    setNotice("Official timetable loaded. Next we will adapt the parser to the exact college format and verify every code using faculty names.");
   }catch(e:any){setNotice(e.message||"Could not load timetable")}
   finally{setLoading(false)}
+ }
+
+ async function importCalendar(){
+  if(!googleConnected){window.location.href="/api/auth/google";return}
+  if(matches.length===0){setNotice("First fetch and verify your timetable. Only verified classes can be imported.");return}
+  setImporting(true);setNotice("");
+  try{
+   const events=matches.map(m=>({
+    summary:m.subject||m.code,
+    description:`${m.code}${m.section?" · Section "+m.section:""} · ${m.teacher}`,
+    start:new Date(Date.now()+86400000).toISOString(),
+    end:new Date(Date.now()+86400000+3600000).toISOString()
+   }));
+   const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events})});
+   const x=await r.json();
+   if(!r.ok)throw new Error(x.error||"Calendar import failed");
+   setNotice(`${x.created} verified event(s) imported into your Google Calendar.`);
+  }catch(e:any){setNotice(e.message||"Calendar import failed")}finally{setImporting(false)}
  }
 
  function showDemoMatching(){
@@ -87,7 +105,7 @@ export default function Home(){
 
   {notice&&<section className="wrap"><div className="notice"><Check size={18}/>{notice}</div></section>}
 
-  {matches.length>0&&<section className="wrap panel preview"><div className="panelHead"><div><h2>Matched timetable preview</h2><p>Only verified or reviewable matches will be shown here.</p></div><span className="verified"><ShieldCheck size={16}/> Verified example</span></div>
+  {matches.length>0&&<section className="wrap panel preview"><div className="panelHead"><div><h2>Matched timetable preview</h2><p>Only verified or reviewable matches will be shown here.</p></div><div style={{display:"flex",gap:10,alignItems:"center"}}><span className="verified"><ShieldCheck size={16}/> Verified example</span><button className="primary importBtn" onClick={importCalendar} disabled={importing}>{importing?<Loader2 className="spin" size={16}/>:<CalendarDays size={16}/>} {importing?"Importing…":"Import to Google Calendar"}</button></div></div>
    {matches.map((m,i)=><div className="match" key={i}><div className="dateBox"><CalendarDays size={20}/></div><div><strong>{m.subject}</strong><p>{m.code}{m.section?" · Section "+m.section:""} · {m.teacher}</p></div><span className="confidence">100% confirmed</span></div>)}
   </section>}
 
