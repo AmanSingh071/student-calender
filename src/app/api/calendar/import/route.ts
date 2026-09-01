@@ -15,10 +15,12 @@ const sleep=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms));
 const CALENDAR_COLOR_IDS=["1","2","3","4","5","6","7","8","9","10","11"];
 
 function colorForSubject(sourceKey:string,summary:string){
- const subject=sourceKey.includes("|")?sourceKey.split("|")[0]:summary;
- let hash=0;
- for(let i=0;i<subject.length;i++)hash=(hash*31+subject.charCodeAt(i))|0;
- return CALENDAR_COLOR_IDS[Math.abs(hash)%CALENDAR_COLOR_IDS.length];
+ const subject=(sourceKey.includes("|")?sourceKey.split("|")[0]:summary).trim().toUpperCase();
+ // Use a stable palette index but avoid adjacent events of different codes
+ // collapsing to the same visible default color.
+ let hash=2166136261;
+ for(let i=0;i<subject.length;i++){hash^=subject.charCodeAt(i);hash=Math.imul(hash,16777619)}
+ return CALENDAR_COLOR_IDS[(hash>>>0)%CALENDAR_COLOR_IDS.length];
 }
 
 async function withRetry<T>(work:()=>Promise<T>):Promise<T>{
@@ -80,6 +82,8 @@ export async function POST(request:NextRequest){
    };
    let eventId=previous?.eventId;
    if(eventId){
+    // Updating explicitly includes colorId so old events also receive the
+    // subject color after a re-import.
     await withRetry(()=>calendar.events.update({calendarId:"primary",eventId,requestBody}));
    }else{
     const result=await withRetry(()=>calendar.events.insert({calendarId:"primary",requestBody}));
