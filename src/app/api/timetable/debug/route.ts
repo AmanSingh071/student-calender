@@ -5,5 +5,5 @@ const SOURCE="https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i6
 export async function GET(){
  const r=await fetch(SOURCE,{cache:"no-store",redirect:"follow",headers:{"Accept":"application/json,text/html,text/plain,*/*","User-Agent":"Student-Calendar/1.0"}});
  const text=await r.text();
- return NextResponse.json({status:r.status,url:r.url,contentType:r.headers.get("content-type"),preview:text.slice(0,8000)});
+ return NextResponse.json({status:r.status,url:r.url,contentType:r.headers.get("content-type"),preview:text.slice(0,30000)});
 }
