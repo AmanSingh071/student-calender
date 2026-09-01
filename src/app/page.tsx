@@ -165,28 +165,24 @@ export default function Home(){
    <div className="panel">
     <div className="panelHead"><div><h2>Choose your subjects</h2><p>{selected.length} selected from Term V{sectionSubjects.length?` · ${Object.keys(sections).filter(id=>sectionSubjects.some(s=>s.id===id)&&sections[id]).length}/${sectionSubjects.length} section(s) chosen`:""}</p></div><button className="linkBtn" onClick={()=>setSelected(selected.length===subjects.length?[]:subjects.map(s=>s.id))}>{selected.length===subjects.length?"Clear all":"Select all"}</button></div>
     <div className="subjectGrid">
-     {subjects.map(s=>{const on=selected.includes(s.id);return <button key={s.id} className={"subject "+(on?"active":"")} onClick={()=>toggle(s.id)}>
-      <span className="tick">{on?<Check size={16}/>:null}</span>
-      <strong>{s.name}</strong>
-      <small>{s.teacher||"Faculty not applicable"}</small>
-      <em>{s.department} · Match code: {s.code}</em>
-     </button>})}
+     {subjects.map(s=>{const on=selected.includes(s.id);const subjectSections=availableSections(s.id);return <div key={s.id} className={"subjectCard "+(on?"active":"")}>
+      <button type="button" className="subjectMain" onClick={()=>toggle(s.id)}>
+       <span className="tick">{on?<Check size={16}/>:null}</span>
+       <strong>{s.name}</strong>
+       <small>{s.teacher||"Faculty not applicable"}</small>
+       <em>{s.department} · Match code: {s.code}</em>
+      </button>
+      {on&&subjectSections.length>0&&<div className="inlineSection" onClick={e=>e.stopPropagation()}>
+       <div className="inlineSectionHead"><span>Which section are you in?</span><small>Required for timetable matching</small></div>
+       <div className="sectionOptions inlineOptions">
+        {subjectSections.map(x=><button type="button" key={x} className={sections[s.id]===x?"sectionChoice selected":"sectionChoice"} onClick={()=>setSections(v=>({...v,[s.id]:x}))}>Section {x}</button>)}
+       </div>
+      </div>}
+     </div>})}
     </div>
    </div>
 
    <aside className="side">
-    <div className="panel sticky">
-     <div className="sideTitle"><span className="stepNo">2</span><div><h2>Sections</h2><p>Choose where applicable</p></div></div>
-     {sectionSubjects.map(s=><div className="sectionRow" key={s.id}>
-       <span>{s.name}</span>
-       <div className="sectionOptions" role="group" aria-label={`Choose section for ${s.name}`}>
-        {availableSections(s.id).map(x=><button type="button" key={x} className={sections[s.id]===x?"sectionChoice selected":"sectionChoice"} onClick={()=>setSections(v=>({...v,[s.id]:x}))}>Section {x}</button>)}
-       </div>
-       {!sections[s.id]&&<small className="sectionHint">Choose your registered section to continue.</small>}
-     </div>)}
-     {!sectionSubjects.length&&<div className="empty">No selected subject currently has a section choice.</div>}
-    </div>
-
     <div className="panel action">
      <div className="sideTitle"><span className="stepNo">3</span><div><h2>Official timetable</h2><p>Fetch directly from college source</p></div></div>
      <button className="primary" onClick={fetchOfficial} disabled={loading}>{loading?<Loader2 className="spin" size={18}/>:<RefreshCw size={18}/>} Fetch Term V timetable</button>
