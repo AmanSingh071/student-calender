@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   const origin = request.nextUrl.origin;
-  const redirectUri = `${origin}/api/auth/callback/google`;
+  const redirectUri = "https://student-calendar-beta.vercel.app/api/auth/callback/google";
   if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
     return NextResponse.redirect(new URL("/?google=config-error", origin));
   }
