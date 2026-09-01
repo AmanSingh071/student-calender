@@ -14,7 +14,8 @@ export default function Home(){
  const [matches,setMatches]=useState<Match[]>([]);
  const [notice,setNotice]=useState("");
  const [googleConnected,setGoogleConnected]=useState(false);
- const [checkingGoogle,setCheckingGoogle]=useState(true);\n const [importing,setImporting]=useState(false);
+ const [checkingGoogle,setCheckingGoogle]=useState(true);
+ const [importing,setImporting]=useState(false);
 
  useEffect(()=>{fetch("/api/auth/status").then(r=>r.json()).then(x=>setGoogleConnected(Boolean(x.connected))).catch(()=>{}).finally(()=>setCheckingGoogle(false)); const p=new URLSearchParams(window.location.search).get("google"); if(p==="connected")setNotice("Google Calendar connected successfully. You can now import verified timetable events."); if(p==="error")setNotice("Google connection was cancelled or could not be completed.");},[]);
 
