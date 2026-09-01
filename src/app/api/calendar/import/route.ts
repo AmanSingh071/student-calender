@@ -1,8 +1,23 @@
+export const runtime="nodejs";
+export const maxDuration=60;
+
 import { google } from "googleapis";
 import { NextRequest,NextResponse } from "next/server";
 import { decrypt, getProfile, saveProfile, SyncEvent } from "@/lib/sync-store";
 
 type EventInput={sourceKey?:string;summary:string;description?:string;start:string;end:string;recurrence?:string[]};
+
+async function runWithConcurrency<T>(items:T[],limit:number,work:(item:T,index:number)=>Promise<void>){
+ let next=0;
+ const workers=Array.from({length:Math.min(limit,items.length)},async()=>{
+  while(true){
+   const index=next++;
+   if(index>=items.length)return;
+   await work(items[index],index);
+  }
+ });
+ await Promise.all(workers);
+}
 
 export async function POST(request:NextRequest){
  try{
@@ -17,12 +32,12 @@ export async function POST(request:NextRequest){
   const auth=new google.auth.OAuth2(process.env.GOOGLE_CLIENT_ID,process.env.GOOGLE_CLIENT_SECRET);
   auth.setCredentials(credentials);
   const calendar=google.calendar({version:"v3",auth});
-  const existing=new Map(profile.events.map(e=>[e.sourceKey,e]));
-  const saved:SyncEvent[]=profile.events.filter(e=>!events.some(input=>(input.sourceKey||"")===e.sourceKey));
 
-  for(let i=0;i<events.length;i++){
-   const input=events[i];
-   const sourceKey=input.sourceKey||`manual:${i}:${input.summary}:${input.start}`;
+  const existing=new Map(profile.events.map(e=>[e.sourceKey,e]));
+  const upserts:SyncEvent[]=new Array(events.length);
+
+  await runWithConcurrency(events,5,async(input,index)=>{
+   const sourceKey=input.sourceKey||`manual:${index}:${input.summary}:${input.start}`;
    const previous=existing.get(sourceKey);
    const requestBody={
     summary:input.summary,
@@ -39,9 +54,12 @@ export async function POST(request:NextRequest){
     const result=await calendar.events.insert({calendarId:"primary",requestBody});
     eventId=result.data.id||undefined;
    }
-   saved.push({...input,sourceKey,eventId});
-  }
-  profile.events=saved;
+   upserts[index]={...input,sourceKey,eventId};
+  });
+
+  // Merge batches instead of discarding events saved by earlier batches.
+  const changed=new Set(upserts.map(e=>e.sourceKey));
+  profile.events=[...profile.events.filter(e=>!changed.has(e.sourceKey)),...upserts];
   profile.enabled=true;
   profile.lastSyncAt=new Date().toISOString();
   profile.lastError=undefined;
