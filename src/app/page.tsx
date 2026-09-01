@@ -61,7 +61,7 @@ export default function Home(){
   }
   return [...v,id];
  });
- const availableSections=(id:string)=>timetableSections[id]||subjects.find(s=>s.id===id)?.sections||[];
+ const availableSections=(id:string)=>Array.from(new Set([...(subjects.find(s=>s.id===id)?.sections||[]),...(timetableSections[id]||[])]));
  const sectionSubjects=chosen.filter(s=>availableSections(s.id).length);
  const fmt=(seconds:number)=>seconds<60?`${seconds}s`:`${Math.floor(seconds/60)}m ${seconds%60}s`;
 
