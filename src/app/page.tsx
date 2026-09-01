@@ -53,7 +53,7 @@ export default function Home(){
    let created=0;
    for(let i=0;i<events.length;i+=batchSize){
     const batch=events.slice(i,i+batchSize);
-    const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events:batch})});
+    const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events:batch,replaceCodes:i===0?chosen.map(s=>s.code):undefined})});
     const x=await r.json();
     if(!r.ok)throw new Error(x.error||"Calendar import failed");
     created+=Number(x.created||0);
@@ -84,7 +84,20 @@ export default function Home(){
 function norm(v:any){return String(v??"").toUpperCase().replace(/[^A-Z0-9]/g,"")}
 function field(row:any,...names:string[]){for(const n of names){const target=norm(n);const k=Object.keys(row).find(x=>{const key=norm(x);return key===target||key.includes(target)||target.includes(key)});if(k)return row[k]}return undefined}
 function rowsFrom(source:any){const out:any[]=[];const walk=(v:any)=>{if(Array.isArray(v))return v.forEach(walk);if(v&&typeof v==="object"){const keys=Object.keys(v);const hasSubject=keys.some(k=>/code|subject|course/i.test(k));const hasSchedule=keys.some(k=>/date|day|start|time/i.test(k));if(hasSubject&&hasSchedule)out.push(v);Object.values(v).forEach(walk)}};if(typeof source==="string"){try{walk(JSON.parse(source))}catch{}}else walk(source);return out}
-function subjectFor(row:any){const code=String(field(row,"code","subject code","course code")||""),name=String(field(row,"subject","subject name","course","course name")||"");return subjects.find(s=>norm(code)===norm(s.code)||norm(name)===norm(s.name)||norm(name).includes(norm(s.name))||norm(s.name).includes(norm(name)))}
+function subjectFor(row:any){
+ const code=String(field(row,"code","subject code","course code")||"").trim();
+ const name=String(field(row,"subject","subject name","course","course name")||"").trim();
+ const nCode=norm(code),nName=norm(name);
+ return subjects.find(s=>{
+  const sCode=norm(s.code),sName=norm(s.name);
+  if(nCode&&nCode===sCode)return true;
+  if(nName&&nName===sName)return true;
+  // Never compare against an empty name: every string contains "" and that
+  // previously made every timetable row match the first subject (AA-I).
+  if(nName&&sName&&nName.length>=4&&(nName.includes(sName)||sName.includes(nName)))return true;
+  return false;
+ });
+}
 function parseTimeRange(row:any){let start=String(field(row,"start","start time","from","time")||"").trim(),end=String(field(row,"end","end time","to")||"").trim();if(!end&&start){const m=start.match(/^\s*(.+?)\s*(?:-|–|—|to)\s*(.+?)\s*$/i);if(m){start=m[1].trim();end=m[2].trim()}}return {start,end}}
 function dateOnly(v:any){const s=String(v||"").trim();if(!s)return null;if(/^\d{4}-\d{2}-\d{2}/.test(s))return s.slice(0,10);const m=s.match(/^(\d{1,2})[/-](\d{1,2})[/-](\d{2,4})$/);if(m){let y=Number(m[3]);if(y<100)y+=2000;return `${y}-${String(m[2]).padStart(2,"0")}-${String(m[1]).padStart(2,"0")}`}const d=new Date(s);return Number.isNaN(d.getTime())?null:d.toISOString().slice(0,10)}
 function parseClock(v:string){const s=v.trim().replace(/\./g,":").replace(/\s+/g," ");const m=s.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)?/i);if(!m)return null;let h=Number(m[1]),min=Number(m[2]||0),ap=(m[3]||"").toUpperCase();if(ap==="PM"&&h<12)h+=12;if(ap==="AM"&&h===12)h=0;if(h>23||min>59)return null;return {h,min}}
