@@ -41,7 +41,7 @@ export default function Home(){
 
  function connectGoogle(){
   setSync({mode:"connecting",startedAt:Date.now(),current:0,total:0});
-  window.location.href="/api/auth/google";
+  window.location.href="/api/google/connect";
  }
 
  async function fetchOfficial(){
