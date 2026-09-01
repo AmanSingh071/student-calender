@@ -36,7 +36,14 @@ export default function Home(){
  },[sync]);
 
  const chosen=useMemo(()=>subjects.filter(s=>selected.includes(s.id)),[selected]);
- const toggle=(id:string)=>setSelected(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id]);
+ const toggle=(id:string)=>setSelected(v=>{
+  if(v.includes(id)){
+   setSections(prev=>{const next={...prev};delete next[id];return next});
+   return v.filter(x=>x!==id);
+  }
+  return [...v,id];
+ });
+ const sectionSubjects=chosen.filter(s=>s.sections?.length);
  const fmt=(seconds:number)=>seconds<60?`${seconds}s`:`${Math.floor(seconds/60)}m ${seconds%60}s`;
 
  function connectGoogle(){
@@ -127,7 +134,7 @@ export default function Home(){
 
   <section className="wrap grid">
    <div className="panel">
-    <div className="panelHead"><div><h2>Choose your subjects</h2><p>{selected.length} selected from Term V</p></div><button className="linkBtn" onClick={()=>setSelected(selected.length===subjects.length?[]:subjects.map(s=>s.id))}>{selected.length===subjects.length?"Clear all":"Select all"}</button></div>
+    <div className="panelHead"><div><h2>Choose your subjects</h2><p>{selected.length} selected from Term V{sectionSubjects.length?` · ${Object.keys(sections).filter(id=>sectionSubjects.some(s=>s.id===id)&&sections[id]).length}/${sectionSubjects.length} section(s) chosen`:""}</p></div><button className="linkBtn" onClick={()=>setSelected(selected.length===subjects.length?[]:subjects.map(s=>s.id))}>{selected.length===subjects.length?"Clear all":"Select all"}</button></div>
     <div className="subjectGrid">
      {subjects.map(s=>{const on=selected.includes(s.id);return <button key={s.id} className={"subject "+(on?"active":"")} onClick={()=>toggle(s.id)}>
       <span className="tick">{on?<Check size={16}/>:null}</span>
@@ -141,8 +148,14 @@ export default function Home(){
    <aside className="side">
     <div className="panel sticky">
      <div className="sideTitle"><span className="stepNo">2</span><div><h2>Sections</h2><p>Choose where applicable</p></div></div>
-     {chosen.filter(s=>s.sections?.length).map(s=><label className="sectionRow" key={s.id}><span>{s.name}</span><select value={sections[s.id]||""} onChange={e=>setSections(v=>({...v,[s.id]:e.target.value}))}><option value="">Select section</option>{s.sections!.map(x=><option key={x}>{x}</option>)}</select></label>)}
-     {!chosen.some(s=>s.sections?.length)&&<div className="empty">Select a subject with sections to configure it.</div>}
+     {sectionSubjects.map(s=><div className="sectionRow" key={s.id}>
+       <span>{s.name}</span>
+       <div className="sectionOptions" role="group" aria-label={`Choose section for ${s.name}`}>
+        {s.sections!.map(x=><button type="button" key={x} className={sections[s.id]===x?"sectionChoice selected":"sectionChoice"} onClick={()=>setSections(v=>({...v,[s.id]:x}))}>Section {x}</button>)}
+       </div>
+       {!sections[s.id]&&<small className="sectionHint">Choose your registered section to continue.</small>}
+     </div>)}
+     {!sectionSubjects.length&&<div className="empty">No selected subject currently has a section choice.</div>}
     </div>
 
     <div className="panel action">
