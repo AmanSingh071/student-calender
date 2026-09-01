@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger calendar synchronization
-        run: curl --fail --silent --show-error "https://student-calendar-beta.vercel.app/api/cron/sync"
+        run: curl --fail --silent --show-error -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" "https://student-calendar-beta.vercel.app/api/cron/sync"
