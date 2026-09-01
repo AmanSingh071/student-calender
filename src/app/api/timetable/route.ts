@@ -8,19 +8,20 @@ export async function GET(){
       cache:"no-store",
       redirect:"follow",
       headers:{
-        "Accept":"application/json,text/plain,text/html,*/*",
+        "Accept":"application/json,text/plain,*/*",
         "User-Agent":"Student-Calendar/1.0"
       }
     });
     const text=await r.text();
-    let data:unknown=null;
-    try{data=JSON.parse(text)}catch{}
-    return NextResponse.json({ok:r.ok,status:r.status,data,text});
+    if(!r.ok) throw new Error(`Official timetable returned HTTP ${r.status}`);
+    let data:unknown;
+    try{data=JSON.parse(text)}catch{throw new Error("Official timetable did not return valid JSON");}
+    return NextResponse.json({ok:true,data},{headers:{"Cache-Control":"no-store, max-age=0"}});
   }catch(error){
     return NextResponse.json({
       ok:false,
       error:"Could not fetch the official timetable",
       detail:error instanceof Error?error.message:"Unknown error"
-    },{status:502});
+    },{status:502,headers:{"Cache-Control":"no-store, max-age=0"}});
   }
 }
