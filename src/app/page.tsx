@@ -7,6 +7,15 @@ import {subjects,normalize} from "@/lib/subjects";
 type Match={day?:string;start:string;end:string;code:string;section?:string;teacher:string;subject:string;recurrence?:string[]};
 type SyncState={mode:"connecting"|"importing"|"reverting";startedAt:number;current:number;total:number};
 
+async function readApiResponse(response:Response){
+ const raw=await response.text();
+ try{return raw?JSON.parse(raw):{}}
+ catch{
+  const message=response.ok?"The server returned an empty response.":"The calendar server returned an error before it could send a valid response. Please try again.";
+  throw new Error(message);
+ }
+}
+
 export default function Home(){
  const [selected,setSelected]=useState<string[]>([]);
  const [sections,setSections]=useState<Record<string,string>>({});
@@ -36,7 +45,7 @@ export default function Home(){
   try{
    while(true){
     const r=await fetch("/api/calendar/revert",{method:"POST"});
-    const x=await r.json();
+    const x=await readApiResponse(r);
     if(!r.ok)throw new Error(x.error||"Could not revert the timetable changes");
     if(!x.remaining)break;
    }
@@ -61,7 +70,7 @@ export default function Home(){
    // Repair earlier bad imports first. Only events created and tracked by this app are removed.
    while(true){
     const cleanRes=await fetch("/api/calendar/reset",{method:"POST"});
-    const clean=await cleanRes.json();
+    const clean=await readApiResponse(cleanRes);
     if(!cleanRes.ok)throw new Error(clean.error||"Could not clean the previous imported timetable");
     if(!clean.remaining)break;
    }
@@ -69,8 +78,8 @@ export default function Home(){
     fetch("/api/sync/configure",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({selected,sections})}),
     fetch("/api/timetable",{cache:"no-store"})
    ]);
-   const pref=await prefRes.json();if(!prefRes.ok)throw new Error(pref.error||"Could not save your subject choices");
-   const time=await timeRes.json();if(!time.ok)throw new Error(time.error||"Could not read the official timetable");
+   const pref=await readApiResponse(prefRes);if(!prefRes.ok)throw new Error(pref.error||"Could not save your subject choices");
+   const time=await readApiResponse(timeRes);if(!time.ok)throw new Error(time.error||"Could not read the official timetable");
    const found=buildMatches(time.data??time.text,selected,sections);
    if(!found.length)throw new Error("No dated timetable events were found for your selected subjects. Your choices were saved, but nothing was imported.");
    setMatches(found);setSync({mode:"importing",startedAt:Date.now(),current:0,total:found.length});
@@ -82,7 +91,7 @@ export default function Home(){
    for(let i=0;i<events.length;i+=batchSize){
     const batch=events.slice(i,i+batchSize);
     const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events:batch,replaceCodes:i===0?chosen.map(s=>s.code):undefined,allSourceKeys:i===0?events.map(e=>e.sourceKey):undefined})});
-    const x=await r.json();
+    const x=await readApiResponse(r);
     if(!r.ok)throw new Error(x.error||"Calendar import failed");
     created+=Number(x.created||0);
     completed+=batch.length;
