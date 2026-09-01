@@ -11,7 +11,7 @@ export async function GET(request:NextRequest){
  const expected=request.cookies.get("oauth_state")?.value;
 
  if(!code||!state||!expected||state!==expected)
-  return NextResponse.redirect(new URL("/?google=error",origin));
+  return NextResponse.redirect(new URL("/?google=callback-error",origin));
 
  if(!process.env.GOOGLE_CLIENT_ID||!process.env.GOOGLE_CLIENT_SECRET)
   return NextResponse.redirect(new URL("/?google=config-error",origin));
