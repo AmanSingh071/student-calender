@@ -7,8 +7,8 @@ export type Subject={
  sections?:string[];
 };
 
-// Section choices are populated only for timetable entries that expose a section.
-// The timetable uses letter sections (for example A/B), not numeric sections.
+// Confirmed against the Term-V timetable: only these subjects have A/B sections.
+// Do not add sections based on class-number suffixes (for example PS 1, PS 2).
 
 export const subjects:Subject[]=[
  {id:"aa1",name:"ADVANCED ANALYTICS-I",teacher:"Dr. Kiran Kumar Paidipati",department:"Decision Sciences",code:"AA-I"},
@@ -24,12 +24,12 @@ export const subjects:Subject[]=[
  {id:"perf",name:"PERFORMANCE MANAGEMENT",teacher:"Prof. Parul Malik",department:"Human Resource Management",code:"PERM"},
  {id:"aibi",name:"AGENTIC AI AND BUSINESS INTEGRATION",teacher:"Dr. Urvashi Rathod / Dr. Karthikeyan Balakumar",department:"Information Technology and Systems",code:"AIBI"},
  {id:"ets",name:"EMERGING TECHNOLOGIES FOR SUSTAINABILITY",teacher:"Dr. Sonali Shankar",department:"Information Technology and Systems",code:"ETS"},
- {id:"mlba",name:"MACHINE LEARNING WITH BUSINESS APPLICATIONS",teacher:"Dr. Alekh Gour",department:"Information Technology and Systems",code:"MLBA"},
+ {id:"mlba",name:"MACHINE LEARNING WITH BUSINESS APPLICATIONS",teacher:"Dr. Alekh Gour",department:"Information Technology and Systems",code:"MLBA",sections:["A","B"]},
  {id:"pfa",name:"PYTHON FOR ANALYTICS: FOUNDATIONS TO GenAI",teacher:"Dr. Alekh Gour",department:"Information Technology and Systems",code:"PFA"},
  {id:"amr",name:"ADVANCED MARKETING RESEARCH",teacher:"Prof. Devika Vashisht",department:"Marketing",code:"AMR"},
- {id:"ams",name:"ADVANCED MARKETING STRATEGY",teacher:"Dr. Amit Anand Tiwari",department:"Marketing",code:"AMS"},
+ {id:"ams",name:"ADVANCED MARKETING STRATEGY",teacher:"Dr. Amit Anand Tiwari",department:"Marketing",code:"AMS",sections:["A","B"]},
  {id:"b2b",name:"B2B MARKETING",teacher:"Dr. Shashi",department:"Marketing",code:"B2B",sections:["A","B"]},
- {id:"pricing",name:"PRICING STRATEGY",teacher:"Prof. Sanja Samirana Pattnayak",department:"Marketing",code:"PS",sections:["A","B"]},
+ {id:"pricing",name:"PRICING STRATEGY",teacher:"Prof. Sanja Samirana Pattnayak",department:"Marketing",code:"PS"},
  {id:"promo",name:"PROMOTION STRATEGY",teacher:"Dr. Vikas Kumar",department:"Marketing",code:"PMS"},
  {id:"sdm",name:"SALES AND DISTRIBUTION MANAGEMENT",teacher:"Dr. Karthikeyan Balakumar / VF",department:"Marketing",code:"SDM"},
  {id:"project",name:"PROJECT MANAGEMENT",teacher:"Prof. Mohita Sharma / Dr. Manish Sarkhel",department:"Operations Management",code:"PJM"},
