@@ -28,7 +28,7 @@ export default function Home(){
  const chosen=useMemo(()=>subjects.filter(s=>selected.includes(s.id)),[selected]);
  const availableSections=(id:string)=>subjects.find(s=>s.id===id)?.sections||[];
  const toggle=(id:string)=>setSelected(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id]);
- function connectGoogle(){setSync({mode:"connecting",startedAt:Date.now(),current:0,total:0});location.href="/api/google/connect"}
+ function connectGoogle(){setSync({mode:"connecting",startedAt:Date.now(),current:0,total:0});location.href="https://student-calendar-beta.vercel.app/api/google/connect"}
 
  async function importCalendar(){
   if(!googleConnected){connectGoogle();return}
