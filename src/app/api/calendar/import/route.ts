@@ -57,6 +57,24 @@ export async function POST(request:NextRequest){
    upserts[index]={...input,sourceKey,eventId};
   });
 
+  // On the first batch, remove obsolete events previously generated for the
+  // subjects being re-imported. This cleans up bad events created by an older parser.
+  if(replaceCodes.length){
+   const fresh=new Set(upserts.map(e=>e.sourceKey));
+   const stale=profile.events.filter(e=>{
+    const code=e.sourceKey.split("|")[0];
+    return replaceCodes.includes(code)&&!fresh.has(e.sourceKey);
+   });
+   for(const event of stale){
+    if(event.eventId){
+     try{await calendar.events.delete({calendarId:"primary",eventId:event.eventId});}
+     catch(err:any){if(err?.code!==404)throw err;}
+    }
+   }
+   const staleKeys=new Set(stale.map(e=>e.sourceKey));
+   profile.events=profile.events.filter(e=>!staleKeys.has(e.sourceKey));
+  }
+
   // Merge batches instead of discarding events saved by earlier batches.
   const changed=new Set(upserts.map(e=>e.sourceKey));
   profile.events=[...profile.events.filter(e=>!changed.has(e.sourceKey)),...upserts];
