@@ -28,6 +28,7 @@ export async function POST(request:NextRequest){
   const body=await request.json();
   const events=body.events as EventInput[];
   const replaceCodes=Array.isArray(body.replaceCodes)?body.replaceCodes.map((x:any)=>String(x)):[];
+  const allSourceKeys=Array.isArray(body.allSourceKeys)?new Set(body.allSourceKeys.map((x:any)=>String(x))):new Set<string>();
   if(!Array.isArray(events)||events.length===0)return NextResponse.json({ok:false,error:"No timetable events to import."},{status:400});
 
   const credentials=JSON.parse(decrypt(profile.token));
@@ -62,7 +63,7 @@ export async function POST(request:NextRequest){
   // On the first batch, remove obsolete events previously generated for the
   // subjects being re-imported. This cleans up bad events created by an older parser.
   if(replaceCodes.length){
-   const fresh=new Set(upserts.map(e=>e.sourceKey));
+   const fresh=allSourceKeys.size?allSourceKeys:new Set(upserts.map(e=>e.sourceKey));
    const stale=profile.events.filter(e=>{
     const code=e.sourceKey.split("|")[0];
     return replaceCodes.includes(code)&&!fresh.has(e.sourceKey);
