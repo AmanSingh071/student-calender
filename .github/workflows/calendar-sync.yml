@@ -1,0 +1,13 @@
+name: Calendar Sync
+
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger calendar synchronization
+        run: curl --fail --silent --show-error "https://student-calendar-beta.vercel.app/api/cron/sync"
