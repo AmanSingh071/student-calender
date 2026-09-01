@@ -25,7 +25,9 @@ export async function POST(request:NextRequest){
   if(!id)return NextResponse.json({ok:false,error:"Google Calendar is not connected."},{status:401});
   const profile=await getProfile(id);
   if(!profile)return NextResponse.json({ok:false,error:"Sync profile was not found. Please reconnect Google."},{status:401});
-  const events=(await request.json()).events as EventInput[];
+  const body=await request.json();
+  const events=body.events as EventInput[];
+  const replaceCodes=Array.isArray(body.replaceCodes)?body.replaceCodes.map((x:any)=>String(x)):[];
   if(!Array.isArray(events)||events.length===0)return NextResponse.json({ok:false,error:"No timetable events to import."},{status:400});
 
   const credentials=JSON.parse(decrypt(profile.token));
