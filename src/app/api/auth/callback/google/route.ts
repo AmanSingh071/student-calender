@@ -4,7 +4,7 @@ import crypto from "crypto";
 import { encrypt, saveProfile } from "@/lib/sync-store";
 
 export async function GET(request:NextRequest){
- const origin=request.nextUrl.origin;
+ const origin="https://student-calendar-beta.vercel.app";
  const redirectUri=`${origin}/api/auth/callback/google`;
  const code=request.nextUrl.searchParams.get("code");
  const state=request.nextUrl.searchParams.get("state");
