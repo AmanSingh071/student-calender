@@ -1,0 +1,34 @@
+name: Sync official timetable
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "data/official-timetable.json"
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright Chromium
+        run: npx --yes playwright@1.55.0 install --with-deps chromium
+      - name: Scrape the official rendered timetable
+        run: node .github/scripts/scrape-timetable.mjs
+      - name: Commit latest timetable snapshot
+        run: |
+          git config user.name "student-calendar-sync[bot]"
+          git config user.email "student-calendar-sync[bot]@users.noreply.github.com"
+          git add data/official-timetable.json
+          git diff --cached --quiet || git commit -m "chore: refresh official timetable"
+          git push
