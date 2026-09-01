@@ -1,6 +1,6 @@
 "use client";
 
-import {useMemo,useState} from "react";
+import {useEffect,useMemo,useState} from "react";
 import {CalendarDays,Check,ChevronRight,GraduationCap,Loader2,RefreshCw,ShieldCheck,Sparkles} from "lucide-react";
 import {subjects} from "@/lib/subjects";
 
@@ -13,6 +13,10 @@ export default function Home(){
  const [raw,setRaw]=useState("");
  const [matches,setMatches]=useState<Match[]>([]);
  const [notice,setNotice]=useState("");
+ const [googleConnected,setGoogleConnected]=useState(false);
+ const [checkingGoogle,setCheckingGoogle]=useState(true);
+
+ useEffect(()=>{fetch("/api/auth/status").then(r=>r.json()).then(x=>setGoogleConnected(Boolean(x.connected))).catch(()=>{}).finally(()=>setCheckingGoogle(false)); const p=new URLSearchParams(window.location.search).get("google"); if(p==="connected")setNotice("Google Calendar connected successfully. You can now import verified timetable events."); if(p==="error")setNotice("Google connection was cancelled or could not be completed.");},[]);
 
  const chosen=useMemo(()=>subjects.filter(s=>selected.includes(s.id)),[selected]);
  const toggle=(id:string)=>setSelected(v=>v.includes(id)?v.filter(x=>x!==id):[...v,id]);
@@ -43,7 +47,7 @@ export default function Home(){
  return <main>
   <header className="topbar"><div className="wrap nav">
    <div className="brand"><span className="brandIcon"><GraduationCap size={23}/></span><span><b>Student Calendar</b><small>Term V timetable assistant</small></span></div>
-   <button className="google" onClick={()=>setNotice("Google Calendar connection will be enabled after Google OAuth credentials are configured.")}>Connect Google Calendar</button>
+   <button className="google" disabled={checkingGoogle} onClick={()=>{if(googleConnected){setNotice("Google Calendar is connected. Calendar import will become available when verified timetable events are ready.")}else{window.location.href="/api/auth/google"}}}>{checkingGoogle?"Checking Google…":googleConnected?"Google Calendar Connected":"Connect Google Calendar"}</button>
   </div></header>
 
   <section className="wrap hero">
