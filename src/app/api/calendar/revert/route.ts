@@ -69,7 +69,7 @@ export async function POST(request:NextRequest){
   do{
    const result=await calendar.events.list({
     calendarId:"primary",
-    privateExtendedProperty:"studentCalendarApp=student-calendar",
+    privateExtendedProperty:["studentCalendarApp=student-calendar"],
     showDeleted:false,
     singleEvents:false,
     maxResults:250,
