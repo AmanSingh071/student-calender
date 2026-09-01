@@ -53,7 +53,7 @@ export default function Home(){
    let created=0;
    for(let i=0;i<events.length;i+=batchSize){
     const batch=events.slice(i,i+batchSize);
-    const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events:batch,replaceCodes:i===0?chosen.map(s=>s.code):undefined})});
+    const r=await fetch("/api/calendar/import",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({events:batch,replaceCodes:i===0?chosen.map(s=>s.code):undefined,allSourceKeys:i===0?events.map(e=>e.sourceKey):undefined})});
     const x=await r.json();
     if(!r.ok)throw new Error(x.error||"Calendar import failed");
     created+=Number(x.created||0);
