@@ -35,3 +35,6 @@
 .syncPromise div{display:flex;flex-direction:column;gap:4px}
 .syncPromise strong{font-size:13px}
 .syncPromise span{font-size:12px;line-height:1.5;color:#5d6d88}
+
+
+.grid.single{grid-template-columns:minmax(0,1fr)}
