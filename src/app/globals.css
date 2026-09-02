@@ -102,3 +102,7 @@
  .syncCard{padding:28px 20px;border-radius:22px}
  .syncCard h2{font-size:19px}
 }
+
+/* Indeterminate progress while the timetable is being prepared */
+.progressTrack span.indeterminate{width:34%!important;animation:timetableProgress 1.15s ease-in-out infinite}
+@keyframes timetableProgress{0%{transform:translateX(-120%)}50%{transform:translateX(115%)}100%{transform:translateX(320%)}}
