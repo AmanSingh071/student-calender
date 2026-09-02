@@ -2,14 +2,14 @@ export const runtime="nodejs";
 export const maxDuration=60;
 
 import { google } from "googleapis";
-import { NextRequest, NextResponse } from "next/server";
-import { decrypt, getProfile, saveProfile } from "@/lib/sync-store";
+import { NextRequest,NextResponse } from "next/server";
+import { decrypt,getProfile,saveProfile } from "@/lib/sync-store";
 
 const sleep=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms));
 
 async function removeWithRetry(calendar:any,eventId:string){
  for(let attempt=0;attempt<6;attempt++){
-  try{await calendar.events.delete({calendarId:"primary",eventId});return}
+  try{await calendar.events.delete({calendarId:"primary",eventId});return;}
   catch(error:any){
    const status=error?.code||error?.response?.status;
    if(status===404)return;
@@ -24,26 +24,15 @@ async function removeWithRetry(calendar:any,eventId:string){
  throw new Error("Google Calendar is temporarily rate-limiting requests. Please try again in a minute.");
 }
 
-async function findStudentCalendarEvents(calendar:any){
- const ids=new Set<string>();
- let pageToken:string|undefined;
- do{
-  const result=await calendar.events.list({
-   calendarId:"primary",
-   showDeleted:false,
-   singleEvents:false,
-   maxResults:2500,
-   pageToken,
-   timeMin:"2020-01-01T00:00:00Z",
-   timeMax:"2035-12-31T23:59:59Z"
-  });
-  for(const event of result.data.items||[]){
-   const props=event.extendedProperties?.private||{};
-   if(event.id&&(props.studentCalendarSourceKey||props.studentCalendarApp==="student-calendar"))ids.add(event.id);
-  }
-  pageToken=result.data.nextPageToken||undefined;
- }while(pageToken);
- return ids;
+async function findMarkedBatch(calendar:any,limit:number){
+ const result=await calendar.events.list({
+  calendarId:"primary",
+  privateExtendedProperty:["studentCalendarApp=student-calendar"],
+  showDeleted:false,
+  singleEvents:false,
+  maxResults:limit
+ });
+ return (result.data.items||[]).map((event:any)=>event.id).filter(Boolean) as string[];
 }
 
 export async function POST(request:NextRequest){
@@ -58,35 +47,44 @@ export async function POST(request:NextRequest){
   auth.setCredentials(credentials);
   const calendar=google.calendar({version:"v3",auth});
 
-  // A reconnect creates a new app profile, so profile.events can be empty
-  // even though older Student Calendar events still exist in Google Calendar.
-  // Always combine the currently tracked IDs with a calendar-side marker scan.
-  // This catches events from previous logins and older app versions without
-  // touching personal events.
-  const ids=new Set<string>();
-  for(const event of profile.events||[]){if(event.eventId)ids.add(event.eventId);}
-  const markedIds=await findStudentCalendarEvents(calendar);
-  for(const eventId of markedIds)ids.add(eventId);
+  // Keep every server request small. This avoids Vercel timeouts and lets the
+  // browser show live progress while a large timetable is being removed.
+  const batchSize=10;
+  const trackedIds=[...new Set((profile.events||[]).map((event:any)=>event.eventId).filter(Boolean))].slice(0,batchSize);
+  const ids=trackedIds.length?trackedIds:await findMarkedBatch(calendar,batchSize);
 
-  let removed=0;
-  for(const eventId of ids){
-   await removeWithRetry(calendar,eventId);
-   removed++;
+  for(const eventId of ids)await removeWithRetry(calendar,eventId);
+
+  if(trackedIds.length){
+   const removedSet=new Set(trackedIds);
+   profile.events=(profile.events||[]).filter((event:any)=>!event.eventId||!removedSet.has(event.eventId));
   }
 
-  // Reset the complete Student Calendar state only after deletion succeeds.
-  profile.events=[];
-  profile.selected=[];
-  profile.sections={};
-  profile.enabled=false;
-  profile.lastSyncAt=undefined;
-  profile.lastError=undefined;
-  profile.sourceHash=undefined;
+  // Check whether another small batch exists. This is intentionally a single
+  // marker query rather than scanning the user's entire calendar.
+  let done=false;
+  if(profile.events?.length){
+   done=false;
+  }else{
+   const next=await findMarkedBatch(calendar,1);
+   done=next.length===0;
+  }
+
+  if(done){
+   profile.events=[];
+   profile.selected=[];
+   profile.sections={};
+   profile.enabled=false;
+   profile.lastSyncAt=undefined;
+   profile.lastError=undefined;
+   profile.sourceHash=undefined;
+  }
   profile.updatedAt=new Date().toISOString();
   await saveProfile(profile);
 
-  return NextResponse.json({ok:true,removed,found:ids.size,remaining:0,complete:true});
- }catch(error){
-  return NextResponse.json({ok:false,error:error instanceof Error?error.message:"Could not revert the calendar changes."},{status:500});
+  return NextResponse.json({ok:true,removed:ids.length,done,remaining:done?0:1});
+ }catch(error:any){
+  const message=error?.response?.data?.error?.message||error?.message||"Could not revert the calendar changes.";
+  return NextResponse.json({ok:false,error:message},{status:500});
  }
 }
