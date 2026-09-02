@@ -180,12 +180,14 @@ function Dashboard({matches,selected,googleAccount,onSetup,onTimetable}:any){
  const dateKey=(d:Date)=>{const p=indiaParts(d);return `${p.year}-${p.month}-${p.day}`};
  const todayDate=dateKey(now);
  const weekday=(d:Date)=>indiaParts(d).weekday;
+ const dayCode=(value:any)=>{const v=String(value||"").trim().toLowerCase();const map:any={sun:"Sun",sunday:"Sun",mon:"Mon",monday:"Mon",tue:"Tue",tues:"Tue",tuesday:"Tue",wed:"Wed",wednesday:"Wed",thu:"Thu",thur:"Thu",thurs:"Thu",thursday:"Thu",fri:"Fri",friday:"Fri",sat:"Sat",saturday:"Sat"};return map[v]||null};
+ const matchDay=(m:any)=>dayCode(m.day)||weekday(new Date(m.start));
  const istTime=(d:Date)=>{const p=indiaParts(d);return {hour:p.hour,minute:p.minute}};
  const isWeekly=(m:any)=>Array.isArray(m.recurrence)&&m.recurrence.some((r:string)=>r.includes("FREQ=WEEKLY"));
  const keyFor=(m:any)=>[m.code,m.section||"",m.start.slice(11,16),m.end.slice(11,16),m.teacher].join("|");
  const toTodayOccurrence=(m:any)=>{
    if(!isWeekly(m)&&dateKey(new Date(m.start))!==todayDate)return null;
-   if(isWeekly(m)&&weekday(new Date(m.start))!==weekday(now))return null;
+   if(isWeekly(m)&&matchDay(m)!==weekday(now))return null;
    if(!isWeekly(m))return m;
    const t=istTime(new Date(m.start));
    const e=istTime(new Date(m.end));
@@ -197,7 +199,7 @@ function Dashboard({matches,selected,googleAccount,onSetup,onTimetable}:any){
    if(!isWeekly(m))return start>now?m:null;
    // Build the occurrence from the IST calendar date, not by adding 24h
    // to a browser-local Date (which can shift the weekday/time).
-   const targetDay=weekday(start);
+   const targetDay=matchDay(m);
    const nowDay=weekday(now);
    const order=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
    const todayIndex=order.indexOf(nowDay),targetIndex=order.indexOf(targetDay);
