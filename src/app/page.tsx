@@ -193,18 +193,28 @@ function Dashboard({matches,selected,googleAccount,onSetup,onTimetable}:any){
  };
  const today:any[]=Array.from(new Map<string,any>(matches.map(toTodayOccurrence).filter(Boolean).map((m:any)=>[keyFor(m),m] as [string,any])).values()).sort((a:any,b:any)=>+new Date(a.start)-+new Date(b.start));
  const nextOccurrence=(m:any)=>{
-   if(!isWeekly(m))return new Date(m.start)>now?m:null;
-   const targetDay=weekday(new Date(m.start));
-   for(let add=0;add<8;add++){
-     const d=new Date(now.getTime()+add*86400000);
-     if(weekday(d)!==targetDay)continue;
-     const dk=dateKey(d),t=istTime(new Date(m.start)),e=istTime(new Date(m.end));
-     const candidate={...m,start:`${dk}T${t.hour}:${t.minute}:00+05:30`,end:`${dk}T${e.hour}:${e.minute}:00+05:30`};
-     if(new Date(candidate.start)>now)return candidate;
+   const start=new Date(m.start);
+   if(!isWeekly(m))return start>now?m:null;
+   // Build the occurrence from the IST calendar date, not by adding 24h
+   // to a browser-local Date (which can shift the weekday/time).
+   const targetDay=weekday(start);
+   const nowDay=weekday(now);
+   const order=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+   const todayIndex=order.indexOf(nowDay),targetIndex=order.indexOf(targetDay);
+   if(todayIndex<0||targetIndex<0)return null;
+   const daysAhead=(targetIndex-todayIndex+7)%7;
+   const base=new Date(now.getTime()+daysAhead*86400000);
+   const dk=dateKey(base),t=istTime(start),e=istTime(new Date(m.end));
+   let candidate={...m,start:`${dk}T${t.hour}:${t.minute}:00+05:30`,end:`${dk}T${e.hour}:${e.minute}:00+05:30`};
+   if(new Date(candidate.start)<=now){
+     const nextWeek=new Date(base.getTime()+7*86400000);
+     const nextKey=dateKey(nextWeek);
+     candidate={...candidate,start:`${nextKey}T${t.hour}:${t.minute}:00+05:30`,end:`${nextKey}T${e.hour}:${e.minute}:00+05:30`};
    }
-   return null;
+   return candidate;
  };
- const next:any=(Array.from(new Map<string,any>(matches.map(nextOccurrence).filter(Boolean).map((m:any)=>[keyFor(m),m] as [string,any])).values()).sort((a:any,b:any)=>+new Date(a.start)-+new Date(b.start))[0] ?? null);
+ const upcoming:any[]=Array.from(new Map<string,any>(matches.map(nextOccurrence).filter(Boolean).map((m:any)=>[keyFor(m),m] as [string,any])).values()).sort((a:any,b:any)=>+new Date(a.start)-+new Date(b.start));
+ const next:any=upcoming[0]??null;
  return <section className="wrap dashboard"><div className="dashHero"><div><div className="eyebrow"><Sparkles size={14}/> YOUR STUDENT HUB</div><h1>Welcome back{googleAccount?.name?", "+googleAccount.name.split(" ")[0]:""} 👋</h1><p>{matches.length?"Your timetable and calendar are in sync.":"Choose subjects to build your personalised student hub."}</p></div><div className="syncStatus"><span/>Google Calendar connected<small>{googleAccount?.email||"Connected account"}</small></div></div><div className="statGrid"><div className="stat"><CalendarDays/><span>Today</span><b>{today.length} classes</b></div><div className="stat"><Clock3/><span>Up next</span><b>{next?next.subject:"No upcoming class"}</b></div><div className="stat"><TrendingUp/><span>Subjects</span><b>{selected.length} selected</b></div><div className="stat"><Bell/><span>Sync</span><b>Automatic</b></div></div><div className="dashGrid"><div className="todayCard"><div className="sectionTitle"><div><span>TODAY'S SCHEDULE</span><h2>{indiaDate(now,{weekday:"long",month:"short",day:"numeric"})}</h2></div><button className="linkBtn" onClick={onTimetable}>Full timetable</button></div>{today.length?today.map((m:any,i:number)=><ClassRow key={i} m={m}/>):<div className="emptyState"><CalendarDays size={28}/><b>No classes found for today</b><p>There are no classes scheduled for today's actual date.</p><button className="primary" onClick={onTimetable}>View full timetable</button></div>}</div><div className="nextCard"><span>UP NEXT</span><h2>{next?next.subject:"You're all caught up"}</h2>{next&&<p>{new Date(next.start).toLocaleString("en-IN",{timeZone:"Asia/Kolkata",weekday:"short",hour:"numeric",minute:"2-digit"})} · {next.teacher}</p>}<button className="secondary" onClick={onTimetable}><CalendarDays size={16}/>Open weekly timetable</button><button className="secondary" onClick={onSetup}><RefreshCw size={16}/>Review timetable setup</button></div></div></section>
 }
 function ClassRow({m}:any){return <div className="classRow"><div className="subjectDot" style={{background:subjectColor(m.code)}}/><div className="classTime">{new Date(m.start).toLocaleTimeString([], {hour:"numeric",minute:"2-digit"})}</div><div><b>{m.subject}</b><small>{m.code}{m.section?" · Section "+m.section:""} · {m.teacher}</small></div></div>}
