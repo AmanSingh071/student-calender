@@ -77,9 +77,9 @@ export default function Home(){
   try{
    // Repair earlier bad imports first. Only events created and tracked by this app are removed.
    while(true){
-    const cleanRes=await fetch("/api/calendar/reset",{method:"POST"});
+    const cleanRes=await fetch("/api/calendar/revert",{method:"POST"});
     const clean=await readApiResponse(cleanRes);
-    if(!cleanRes.ok)throw new Error(clean.error||"Could not clean the previous imported timetable");
+    if(!cleanRes.ok)throw new Error(clean.error||"Could not remove the previous Student Calendar timetable");
     if(!clean.remaining)break;
    }
    const [prefRes,timeRes]=await Promise.all([
