@@ -55,7 +55,7 @@ async function findStudentBatch(calendar:any,limit:number){
  // First fetch events explicitly marked by current versions of the app.
  let pageToken:string|undefined;
  do{
-  const result=await calendar.events.list({
+  const result:any=await calendar.events.list({
    calendarId:"primary",
    privateExtendedProperty:["studentCalendarApp=student-calendar"],
    showDeleted:false,
@@ -74,7 +74,7 @@ async function findStudentBatch(calendar:any,limit:number){
  const timeMin=new Date(Date.now()-1000*60*60*24*365*2).toISOString();
  const timeMax=new Date(Date.now()+1000*60*60*24*365*2).toISOString();
  do{
-  const result=await calendar.events.list({
+  const result:any=await calendar.events.list({
    calendarId:"primary",
    timeMin,
    timeMax,
