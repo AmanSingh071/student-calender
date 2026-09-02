@@ -37,7 +37,7 @@ export default function Home(){
   tick();
   const timer=window.setInterval(tick,1000);
   return()=>window.clearInterval(timer);
- },[sync]);
+ },[sync?.startedAt]);
 
  useEffect(()=>{
   fetch("/api/auth/status").then(r=>r.json()).then(x=>{setGoogleConnected(Boolean(x.connected));setGoogleAccount(x.account||null)}).catch(()=>{}).finally(()=>setCheckingGoogle(false));
@@ -68,7 +68,7 @@ export default function Home(){
     const x=await readApiResponse(r);
     if(!r.ok)throw new Error(x.error||"Could not revert the timetable changes");
     removedTotal+=Number(x.removed||0);
-    setSync({mode:"reverting",startedAt:Date.now(),current:removedTotal,total:0});
+    setSync(prev=>prev?{...prev,current:removedTotal,total:0}:prev);
     if(x.done||!x.remaining)break;
    }
    setSelected([]);
@@ -96,17 +96,17 @@ export default function Home(){
     if(!cleanRes.ok)throw new Error(clean.error||"Could not remove the previous Student Calendar timetable");
     if(!clean.remaining)break;
    }
-   setSync({mode:"importing",startedAt:Date.now(),current:0,total:0,phase:"Fetching the latest official timetable…"});
+   setSync(prev=>prev?{...prev,current:0,total:0,phase:"Fetching the latest official timetable…"}:prev);
    const [prefRes,timeRes]=await Promise.all([
     fetch("/api/sync/configure",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({selected,sections})}),
     fetch("/api/timetable",{cache:"no-store"})
    ]);
    const pref=await readApiResponse(prefRes);if(!prefRes.ok)throw new Error(pref.error||"Could not save your subject choices");
    const time=await readApiResponse(timeRes);if(!time.ok)throw new Error(time.error||"Could not read the official timetable");
-   setSync({mode:"importing",startedAt:Date.now(),current:0,total:0,phase:"Matching your selected subjects…"});
+   setSync(prev=>prev?{...prev,current:0,total:0,phase:"Matching your selected subjects…"}:prev);
    const found=buildMatches(time.data??time.text,selected,sections);
    if(!found.length)throw new Error("No dated timetable events were found for your selected subjects. Your choices were saved, but nothing was imported.");
-   setMatches(found);setSync({mode:"importing",startedAt:Date.now(),current:0,total:found.length,phase:"Ready to import"});
+   setMatches(found);setSync(prev=>prev?{...prev,current:0,total:found.length,phase:"Ready to import"}:prev);
    const events=found.map(m=>({summary:m.subject,description:[m.code,m.section?"Section "+m.section:"",m.teacher].filter(Boolean).join(" · "),sourceKey:[m.code,m.section||"",m.start,m.end,m.teacher,(m.recurrence||[]).join(",")].join("|"),start:m.start,end:m.end,recurrence:m.recurrence}));
    // Import in small batches so a large timetable cannot hit a single Vercel request timeout.
    const batchSize=10;
@@ -119,7 +119,7 @@ export default function Home(){
     if(!r.ok)throw new Error(x.error||"Calendar import failed");
     created+=Number(x.created||0);
     completed+=batch.length;
-    setSync({mode:"importing",startedAt:Date.now(),current:completed,total:found.length});
+    setSync(prev=>prev?{...prev,current:completed,total:found.length,phase:"Importing classes…"}:prev);
    }
    setNotice(created+" class/event(s) imported to Google Calendar. Automatic sync is enabled for future official timetable changes.");setTab("dashboard");
   }catch(e:any){setNotice(e.message||"Calendar import failed")}
