@@ -45,16 +45,22 @@ export default function Home(){
   if(!confirm("Revert your timetable changes? This will remove only the events created by Student Calendar, clear your saved subject and section choices, and turn off automatic sync. Your personal Google Calendar events will not be touched."))return;
   setNotice("");setSync({mode:"reverting",startedAt:Date.now(),current:0,total:0});
   try{
+   let removedTotal=0;
+   let rounds=0;
    while(true){
+    rounds++;
+    if(rounds>1000)throw new Error("The revert process took too many batches. Please try again.");
     const r=await fetch("/api/calendar/revert",{method:"POST"});
     const x=await readApiResponse(r);
     if(!r.ok)throw new Error(x.error||"Could not revert the timetable changes");
-    if(!x.remaining)break;
+    removedTotal+=Number(x.removed||0);
+    setSync({mode:"reverting",startedAt:Date.now(),current:removedTotal,total:0});
+    if(x.done||!x.remaining)break;
    }
    setSelected([]);
    setSections({});
    setMatches([]);
-   setNotice("All Student Calendar timetable changes were reverted. App-created timetable events were removed and automatic sync was turned off.");
+   setNotice(removedTotal>0?removedTotal+" Student Calendar event(s) were removed. Automatic sync was turned off and your timetable setup was reset.":"No Student Calendar events were found. Your timetable setup was reset.");
   }catch(e:any){
    setNotice(e.message||"Could not revert the timetable changes");
   }finally{
@@ -108,7 +114,7 @@ export default function Home(){
  if(!googleConnected)return <main className="connectPage"><section className="connectCard"><div className="connectIcon"><CalendarDays size={34}/></div><div className="eyebrow"><Sparkles size={15}/> TERM V SETUP</div><h1>Start by connecting<br/><span>your Google Calendar.</span></h1><p>Connect once, choose your subjects, and import your classes.</p><button className="primary connectPrimary" onClick={connectGoogle}><CalendarDays size={19}/> Continue with Google</button></section>{notice&&<div className="connectNotice">{notice}</div>}</main>;
 
  return <main>
-  {sync&&<div className="syncOverlay"><div className="syncCard"><Loader2 className="spin" size={34}/><div className="syncLabel">{sync.mode==="importing"?"IMPORTING TO GOOGLE CALENDAR":sync.mode==="reverting"?"REVERTING CALENDAR CHANGES":"CONNECTING GOOGLE"}</div><h2>{sync.mode==="importing"?sync.total>0?`Importing ${sync.current} of ${sync.total} classes…`:"Reading your timetable…":sync.mode==="reverting"?"Removing Student Calendar events and restoring your setup…":"Opening secure Google sign-in…"}</h2>{sync.mode==="importing"&&sync.total>0&&<p>{sync.current} of {sync.total} events completed</p>}</div></div>}
+  {sync&&<div className="syncOverlay"><div className="syncCard"><Loader2 className="spin" size={34}/><div className="syncLabel">{sync.mode==="importing"?"IMPORTING TO GOOGLE CALENDAR":sync.mode==="reverting"?"REVERTING CALENDAR CHANGES":"CONNECTING GOOGLE"}</div><h2>{sync.mode==="importing"?sync.total>0?`Importing ${sync.current} of ${sync.total} classes…`:"Reading your timetable…":sync.mode==="reverting"?"Removing Student Calendar events and restoring your setup…":"Opening secure Google sign-in…"}</h2>{sync.mode==="importing"&&sync.total>0&&<p>{sync.current} of {sync.total} events completed</p>}{sync.mode==="reverting"&&<p>{sync.current>0?sync.current+" event(s) removed so far…":"Finding Student Calendar events to remove…"}</p>}</div></div>}
   <header className="topbar"><div className="wrap nav"><div className="brand"><span className="brandIcon"><GraduationCap size={23}/></span><span><b>Student Calendar</b><small>Google Calendar connected</small></span></div><div className="accountMenu">{googleAccount?.picture?<img src={googleAccount.picture} alt="" className="accountAvatar"/>:<span className="accountAvatar fallback">{(googleAccount?.name||googleAccount?.email||"G").trim().charAt(0).toUpperCase()}</span>}<div className="accountText"><b>{googleAccount?.name||"Google account"}</b><small>{googleAccount?.email||"Google Calendar connected"}</small></div><button className="logoutBtn" onClick={logout}><LogOut size={16}/> Logout</button></div></div></header>
   <section className="wrap hero"><div className="eyebrow"><Sparkles size={15}/> PERSONAL TERM V SCHEDULE</div><h1>Your subjects.<br/><span>Your calendar.</span></h1><p>Select the subjects you registered for. Sections appear directly below a subject only when that subject has multiple sections.</p></section>
   <section className="wrap grid single"><div className="panel"><div className="panelHead"><div><h2>Choose your subjects</h2><p>{selected.length} selected from Term V</p></div><button className="linkBtn" onClick={()=>setSelected(selected.length===subjects.length?[]:subjects.map(s=>s.id))}>{selected.length===subjects.length?"Clear all":"Select all"}</button></div>
