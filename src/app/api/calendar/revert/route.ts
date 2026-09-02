@@ -58,26 +58,15 @@ export async function POST(request:NextRequest){
   auth.setCredentials(credentials);
   const calendar=google.calendar({version:"v3",auth});
 
-  // Do not rely only on Supabase. Older imports can still exist in Google
-  // Calendar even if their saved IDs were lost or overwritten.
-  // Start with IDs tracked in the user's profile. This is fast and covers
-  // previous imports. Then search only for the permanent app marker used by
-  // newer imports instead of scanning the user's entire calendar.
+  // A reconnect creates a new app profile, so profile.events can be empty
+  // even though older Student Calendar events still exist in Google Calendar.
+  // Always combine the currently tracked IDs with a calendar-side marker scan.
+  // This catches events from previous logins and older app versions without
+  // touching personal events.
   const ids=new Set<string>();
   for(const event of profile.events||[]){if(event.eventId)ids.add(event.eventId);}
-  let pageToken:string|undefined;
-  do{
-   const result=await calendar.events.list({
-    calendarId:"primary",
-    privateExtendedProperty:["studentCalendarApp=student-calendar"],
-    showDeleted:false,
-    singleEvents:false,
-    maxResults:250,
-    pageToken
-   });
-   for(const event of result.data.items||[]){if(event.id)ids.add(event.id);}
-   pageToken=result.data.nextPageToken||undefined;
-  }while(pageToken);
+  const markedIds=await findStudentCalendarEvents(calendar);
+  for(const eventId of markedIds)ids.add(eventId);
 
   let removed=0;
   for(const eventId of ids){
@@ -96,7 +85,7 @@ export async function POST(request:NextRequest){
   profile.updatedAt=new Date().toISOString();
   await saveProfile(profile);
 
-  return NextResponse.json({ok:true,removed,remaining:0,complete:true});
+  return NextResponse.json({ok:true,removed,found:ids.size,remaining:0,complete:true});
  }catch(error){
   return NextResponse.json({ok:false,error:error instanceof Error?error.message:"Could not revert the calendar changes."},{status:500});
  }
