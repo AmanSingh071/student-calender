@@ -149,7 +149,12 @@ export default function Home(){
 }
 
 function norm(v:any){return String(v??"").toUpperCase().replace(/[^A-Z0-9]/g,"")}
-function field(row:any,...names:string[]){for(const n of names){const target=norm(n);const k=Object.keys(row).find(x=>{const key=norm(x);return key===target||key.includes(target)||target.includes(key)});if(k)return row[k]}return undefined}
+function field(row:any,...names:string[]){
+ const keys=Object.keys(row);
+ for(const n of names){const target=norm(n);const exact=keys.find(x=>norm(x)===target);if(exact!==undefined)return row[exact]}
+ for(const n of names){const target=norm(n);const candidates=keys.filter(x=>norm(x).includes(target));if(candidates.length){candidates.sort((a,b)=>norm(a).length-norm(b).length);return row[candidates[0]]}}
+ return undefined
+}
 function rowsFrom(source:any){const out:any[]=[];const walk=(v:any)=>{if(Array.isArray(v))return v.forEach(walk);if(v&&typeof v==="object"){const keys=Object.keys(v);const hasSubject=keys.some(k=>/code|subject|course/i.test(k));const hasSchedule=keys.some(k=>/date|day|start|time/i.test(k));if(hasSubject&&hasSchedule)out.push(v);Object.values(v).forEach(walk)}};if(typeof source==="string"){try{walk(JSON.parse(source))}catch{}}else walk(source);return out}
 function subjectFor(row:any){
  const code=String(field(row,"code","subject code","course code")||"").trim();
@@ -197,23 +202,19 @@ function Dashboard({matches,selected,googleAccount,onSetup,onTimetable}:any){
  const nextOccurrence=(m:any)=>{
    const start=new Date(m.start);
    if(!isWeekly(m))return start>now?m:null;
-   // Build the occurrence from the IST calendar date, not by adding 24h
-   // to a browser-local Date (which can shift the weekday/time).
-   const targetDay=matchDay(m);
-   const nowDay=weekday(now);
-   const order=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
-   const todayIndex=order.indexOf(nowDay),targetIndex=order.indexOf(targetDay);
-   if(todayIndex<0||targetIndex<0)return null;
-   const daysAhead=(targetIndex-todayIndex+7)%7;
+   const order=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+   const targetIndex=order.indexOf(matchDay(m));
+   const nowIndex=order.indexOf(weekday(now));
+   if(targetIndex<0||nowIndex<0)return null;
+   const t=istTime(start);
+   const p=indiaParts(now);
+   const nowMinutes=Number(p.hour)*60+Number(p.minute);
+   const classMinutes=Number(t.hour)*60+Number(t.minute);
+   let daysAhead=(targetIndex-nowIndex+7)%7;
+   if(daysAhead===0&&classMinutes<=nowMinutes)daysAhead=7;
    const base=new Date(now.getTime()+daysAhead*86400000);
-   const dk=dateKey(base),t=istTime(start),e=istTime(new Date(m.end));
-   let candidate={...m,start:`${dk}T${t.hour}:${t.minute}:00+05:30`,end:`${dk}T${e.hour}:${e.minute}:00+05:30`};
-   if(new Date(candidate.start)<=now){
-     const nextWeek=new Date(base.getTime()+7*86400000);
-     const nextKey=dateKey(nextWeek);
-     candidate={...candidate,start:`${nextKey}T${t.hour}:${t.minute}:00+05:30`,end:`${nextKey}T${e.hour}:${e.minute}:00+05:30`};
-   }
-   return candidate;
+   const dk=dateKey(base),e=istTime(new Date(m.end));
+   return {...m,start:`${dk}T${t.hour}:${t.minute}:00+05:30`,end:`${dk}T${e.hour}:${e.minute}:00+05:30`};
  };
  const upcoming:any[]=Array.from(new Map<string,any>(matches.map(nextOccurrence).filter(Boolean).map((m:any)=>[keyFor(m),m] as [string,any])).values()).sort((a:any,b:any)=>+new Date(a.start)-+new Date(b.start));
  const next:any=upcoming[0]??null;
