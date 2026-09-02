@@ -4,8 +4,11 @@ export const maxDuration=60;
 import { google } from "googleapis";
 import { NextRequest,NextResponse } from "next/server";
 import { decrypt,getProfile,saveProfile } from "@/lib/sync-store";
+import { subjects } from "@/lib/subjects";
 
 const sleep=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms));
+const LEGACY_SUBJECTS=new Set(subjects.map(subject=>subject.name.trim().toUpperCase()));
+const LEGACY_CODES=subjects.map(subject=>subject.code.toUpperCase());
 
 async function removeWithRetry(calendar:any,eventId:string){
  for(let attempt=0;attempt<6;attempt++){
@@ -24,15 +27,68 @@ async function removeWithRetry(calendar:any,eventId:string){
  throw new Error("Google Calendar is temporarily rate-limiting requests. Please try again in a minute.");
 }
 
-async function findMarkedBatch(calendar:any,limit:number){
- const result=await calendar.events.list({
-  calendarId:"primary",
-  privateExtendedProperty:["studentCalendarApp=student-calendar"],
-  showDeleted:false,
-  singleEvents:false,
-  maxResults:limit
- });
- return (result.data.items||[]).map((event:any)=>event.id).filter(Boolean) as string[];
+function isStudentCalendarEvent(event:any){
+ const privateProps=event?.extendedProperties?.private||{};
+ if(privateProps.studentCalendarApp==="student-calendar")return true;
+ if(typeof privateProps.studentCalendarSourceKey==="string"&&privateProps.studentCalendarSourceKey.length>0)return true;
+
+ // Legacy versions of the app did not always save extendedProperties.
+ // Their timetable events used an exact Term-V subject title plus timetable
+ // metadata (course code / section / faculty) or a weekly class recurrence.
+ const summary=String(event?.summary||"").trim().toUpperCase();
+ if(!LEGACY_SUBJECTS.has(summary))return false;
+ const description=String(event?.description||"").toUpperCase();
+ const recurrence=Array.isArray(event?.recurrence)?event.recurrence.join(" ").toUpperCase():"";
+ const hasCourseCode=LEGACY_CODES.some(code=>description.includes(code));
+ const looksLikeWeeklyClass=recurrence.includes("FREQ=WEEKLY");
+ return hasCourseCode||looksLikeWeeklyClass;
+}
+
+async function findStudentBatch(calendar:any,limit:number){
+ const ids:string[]=[];
+ const seen=new Set<string>();
+ const add=(event:any)=>{
+  const eventId=String(event?.id||"");
+  if(eventId&&isStudentCalendarEvent(event)&&!seen.has(eventId)){seen.add(eventId);ids.push(eventId);}
+ };
+
+ // First fetch events explicitly marked by current versions of the app.
+ let pageToken:string|undefined;
+ do{
+  const result=await calendar.events.list({
+   calendarId:"primary",
+   privateExtendedProperty:["studentCalendarApp=student-calendar"],
+   showDeleted:false,
+   singleEvents:false,
+   maxResults:250,
+   pageToken
+  });
+  for(const event of result.data.items||[])add(event);
+  if(ids.length>=limit)return ids.slice(0,limit);
+  pageToken=result.data.nextPageToken||undefined;
+ }while(pageToken);
+
+ // Also scan the practical timetable period for legacy events that were created
+ // by earlier builds before the permanent app marker existed.
+ pageToken=undefined;
+ const timeMin=new Date(Date.now()-1000*60*60*24*365*2).toISOString();
+ const timeMax=new Date(Date.now()+1000*60*60*24*365*2).toISOString();
+ do{
+  const result=await calendar.events.list({
+   calendarId:"primary",
+   timeMin,
+   timeMax,
+   showDeleted:false,
+   singleEvents:false,
+   maxResults:250,
+   pageToken
+  });
+  for(const event of result.data.items||[])add(event);
+  if(ids.length>=limit)return ids.slice(0,limit);
+  pageToken=result.data.nextPageToken||undefined;
+ }while(pageToken);
+
+ return ids;
 }
 
 export async function POST(request:NextRequest){
@@ -47,11 +103,9 @@ export async function POST(request:NextRequest){
   auth.setCredentials(credentials);
   const calendar=google.calendar({version:"v3",auth});
 
-  // Keep every server request small. This avoids Vercel timeouts and lets the
-  // browser show live progress while a large timetable is being removed.
   const batchSize=10;
   const trackedIds=[...new Set((profile.events||[]).map((event:any)=>event.eventId).filter(Boolean))].slice(0,batchSize);
-  const ids=trackedIds.length?trackedIds:await findMarkedBatch(calendar,batchSize);
+  const ids=trackedIds.length?trackedIds:await findStudentBatch(calendar,batchSize);
 
   for(const eventId of ids)await removeWithRetry(calendar,eventId);
 
@@ -60,15 +114,11 @@ export async function POST(request:NextRequest){
    profile.events=(profile.events||[]).filter((event:any)=>!event.eventId||!removedSet.has(event.eventId));
   }
 
-  // Check whether another small batch exists. This is intentionally a single
-  // marker query rather than scanning the user's entire calendar.
-  let done=false;
-  if(profile.events?.length){
-   done=false;
-  }else{
-   const next=await findMarkedBatch(calendar,1);
-   done=next.length===0;
-  }
+  // Never declare completion merely because the current profile is empty.
+  // A previous login can have created events that are discoverable only from
+  // Google Calendar itself.
+  const next=await findStudentBatch(calendar,1);
+  const done=next.length===0;
 
   if(done){
    profile.events=[];
