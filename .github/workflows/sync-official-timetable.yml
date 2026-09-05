@@ -21,8 +21,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      # The scraper imports Playwright as a Node module. Installing only the
+      # browser binary does not install that module.
+      - name: Install Playwright package
+        run: npm install --no-save --no-package-lock playwright@1.55.0
       - name: Install Playwright Chromium
-        run: npx --yes playwright@1.55.0 install --with-deps chromium
+        run: npx playwright@1.55.0 install --with-deps chromium
       - name: Scrape the official rendered timetable
         run: node .github/scripts/scrape-timetable.mjs
       - name: Commit latest timetable snapshot
