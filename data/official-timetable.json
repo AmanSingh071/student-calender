@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-07T04:47:11.857Z",
-  "rowCount": 1065,
+  "fetchedAt": "2026-09-07T10:22:31.866Z",
+  "rowCount": 1067,
   "headers": [
     "Date",
     "Day",
@@ -1763,6 +1763,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 2"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "ETS 5 Dr Sonali Shankar CR-3"
@@ -1971,7 +1978,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "3-Oct-2026",
+      "Date": "3/Oct/26",
       "Day": "Saturday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -2591,7 +2598,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 2"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 3"
     },
     {
       "Date": "",
@@ -3179,7 +3186,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 3"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
     },
     {
       "Date": "",
@@ -3417,7 +3424,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
     },
     {
       "Date": "",
@@ -3742,7 +3749,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "22/Oct/26",
+      "Date": "22-Oct-2026",
       "Day": "Thursday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -4482,6 +4489,13 @@
       "Timings (24 hrs. format)": "10:45 - 12:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 6"
     },
     {
       "Date": "",
@@ -5695,7 +5709,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "12-Nov-2026",
+      "Date": "12/Nov/26",
       "Day": "Thursday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -5881,7 +5895,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
     },
     {
       "Date": "",
@@ -6462,7 +6476,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
     },
     {
       "Date": "",
@@ -6588,7 +6602,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
     },
     {
       "Date": "",
@@ -6826,13 +6840,6 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FAMDM 17 Dr Srikanta Kundu CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "SCAS 19 Dr M. Pachayappan LH-1"
     },
     {
@@ -6875,7 +6882,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 10"
     },
     {
       "Date": "",
@@ -6904,6 +6911,13 @@
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "FAMDM 17 Dr Srikanta Kundu CR-3"
     },
     {
       "Date": "",
@@ -7148,7 +7162,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 11"
     },
     {
       "Date": "",
@@ -7309,7 +7323,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 10"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 12"
     },
     {
       "Date": "",
