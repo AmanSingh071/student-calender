@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-10T04:54:59.839Z",
-  "rowCount": 1067,
+  "fetchedAt": "2026-09-10T09:48:33.799Z",
+  "rowCount": 1068,
   "headers": [
     "Date",
     "Day",
@@ -993,6 +993,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "B",
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 3 Dr Shashi LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -1079,7 +1086,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 3 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 4 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -1135,7 +1142,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 1"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 3 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -1177,7 +1184,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 4 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 5 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -1234,6 +1241,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FAMDM 4 Dr Srikanta Kundu CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "A",
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 5 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -1616,6 +1630,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "A",
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 6 Dr Shashi LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -1765,7 +1786,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 2"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 1"
     },
     {
       "Date": "",
@@ -1786,7 +1807,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 3 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 4 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -1828,7 +1849,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 5 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 6 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -1849,7 +1870,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 5 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 7 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -1905,7 +1926,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 4 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 5 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -1947,7 +1968,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 6 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 7 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -1968,7 +1989,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 6 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 8 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -1978,7 +1999,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "3/Oct/26",
+      "Date": "3-Oct-2026",
       "Day": "Saturday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -2102,6 +2123,13 @@
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "B",
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 8 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -2465,7 +2493,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 5 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 6 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -2507,7 +2535,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 7 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 9 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -2528,7 +2556,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 7 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 9 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -2584,7 +2612,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 6 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 7 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -2598,7 +2626,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 3"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 2"
     },
     {
       "Date": "",
@@ -2619,7 +2647,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 8 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 10 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -2640,7 +2668,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 8 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 10 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -2650,7 +2678,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "9-Oct-2026",
+      "Date": "9/Oct/26",
       "Day": "Friday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -2752,7 +2780,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 7 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 8 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -2825,7 +2853,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "11-Oct-2026",
+      "Date": "11/Oct/26",
       "Day": "Sunday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -3172,7 +3200,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 8 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 9 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -3186,7 +3214,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 3"
     },
     {
       "Date": "",
@@ -3207,7 +3235,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 9 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 11 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -3228,7 +3256,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 9 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 11 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -3291,7 +3319,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 9 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 10 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -3312,7 +3340,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 10 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 12 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -3333,7 +3361,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 10 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 12 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -3424,7 +3452,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
     },
     {
       "Date": "",
@@ -3795,7 +3823,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 10 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 11 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -3852,6 +3880,13 @@
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "MPPP 12 Dr Ashish Goel LH-1"
     },
     {
       "Date": "23-Oct-2026",
@@ -4066,9 +4101,23 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "B",
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 13 Dr Shashi LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "A",
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 13 Dr Shashi LH-1"
     },
     {
       "Date": "25-Oct-2026",
@@ -4208,7 +4257,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "MPPP 12 Dr Ashish Goel LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "MPPP 13 Dr Ashish Goel LH-1"
     },
     {
       "Date": "",
@@ -4327,7 +4376,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "MPPP 13 Dr Ashish Goel LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "MPPP 14 Dr Ashish Goel LH-1"
     },
     {
       "Date": "",
@@ -4346,9 +4395,23 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "A",
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 14 Dr Shashi LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "B",
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 14 Dr Shashi LH-1"
     },
     {
       "Date": "28-Oct-2026",
@@ -4397,7 +4460,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 11 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 12 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -4439,7 +4502,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 11 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 15 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -4460,7 +4523,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 11 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 15 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -4495,7 +4558,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 6"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 5"
     },
     {
       "Date": "",
@@ -4516,7 +4579,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 12 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 13 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -4558,7 +4621,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 12 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 16 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -4579,7 +4642,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 12 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 16 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -4596,7 +4659,7 @@
       "Course-Section-Session#-Faculty-Classroom": "SDM 11 Prof. Sunil Chandran LH-1"
     },
     {
-      "Date": "30-Oct-2026",
+      "Date": "30/Oct/26",
       "Day": "Friday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -4999,7 +5062,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "MPPP 14 Dr Ashish Goel LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "MPPP 15 Dr Ashish Goel LH-1"
     },
     {
       "Date": "",
@@ -5125,7 +5188,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "MPPP 15 Dr Ashish Goel LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "MPPP 16 Dr Ashish Goel LH-1"
     },
     {
       "Date": "",
@@ -5209,7 +5272,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 13 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 14 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5251,7 +5314,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 13 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 17 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -5272,7 +5335,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 13 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 17 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -5328,7 +5391,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 14 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 15 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5370,7 +5433,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 14 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 18 Dr Shashi LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -5391,7 +5454,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 14 Dr Shashi LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 18 Dr Shashi LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -5552,14 +5615,14 @@
       "Day": "",
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 16 Dr Urvashi Rathod CR-5"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "MPPP 16 Dr Ashish Goel LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 16 Dr Urvashi Rathod CR-5"
     },
     {
       "Date": "",
@@ -5636,7 +5699,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 15 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 16 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5676,13 +5739,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 15 Dr Shashi LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -5697,19 +5753,12 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 15 Dr Shashi LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "12/Nov/26",
+      "Date": "12-Nov-2026",
       "Day": "Thursday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -5755,7 +5804,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 16 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 17 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5795,13 +5844,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 16 Dr Shashi LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -5812,13 +5854,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "PS 16 Dr Sanja Pattnayak CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 16 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -5895,7 +5930,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
     },
     {
       "Date": "",
@@ -6383,13 +6418,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 17 Dr Shashi LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -6400,13 +6428,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "PS 17 Dr Sanja Pattnayak CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 17 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -6462,7 +6483,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 17 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 18 Dr. K. J. Jithendran CR-5 (Feedback)"
     },
     {
       "Date": "",
@@ -6476,7 +6497,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
     },
     {
       "Date": "",
@@ -6495,13 +6516,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 18 Dr Shashi LH-1 (Feedback)"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -6512,13 +6526,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "PS 18 Dr Sanja Pattnayak CR-3 (Feedback)"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 18 Dr Shashi LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -6602,7 +6609,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
     },
     {
       "Date": "",
@@ -6882,7 +6889,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 10"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
     },
     {
       "Date": "",
@@ -7071,7 +7078,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 18 Dr. K. J. Jithendran CR-5 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 19 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -7162,7 +7169,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 11"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 10"
     },
     {
       "Date": "",
@@ -7183,7 +7190,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 19 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 20 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -7323,7 +7330,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 12"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 11"
     },
     {
       "Date": "",
