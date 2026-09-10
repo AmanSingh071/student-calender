@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-10T00:18:05.592Z",
+  "fetchedAt": "2026-09-10T04:54:59.839Z",
   "rowCount": 1067,
   "headers": [
     "Date",
@@ -1142,6 +1142,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ATM 2 Ms. Asha Jacob LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "ETS 4 Dr Sonali Shankar CR-3"
     },
     {
@@ -1150,13 +1157,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FRM 4 Dr Bhanu Pratap Singh LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 3 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -1254,7 +1254,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 2 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 3 Ms. Asha Jacob LH-1"
     },
     {
       "Date": "",
@@ -1366,7 +1366,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 3 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 4 Ms. Asha Jacob LH-1"
     },
     {
       "Date": "",
@@ -1611,7 +1611,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 4 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 5 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -1786,7 +1786,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 4 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 3 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -1905,7 +1905,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 5 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 4 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -2003,7 +2003,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 5 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 6 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -2402,7 +2402,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 6 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 7 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -2465,7 +2465,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 6 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 5 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -2584,7 +2584,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 7 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 6 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -2682,7 +2682,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 7 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 8 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -2752,7 +2752,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 8 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 7 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -3172,7 +3172,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 9 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 8 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -3291,7 +3291,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 10 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 9 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -3389,7 +3389,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 8 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 9 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -3501,7 +3501,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 9 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 10 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -3795,7 +3795,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 11 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 10 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -3893,7 +3893,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 10 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 11 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -3998,7 +3998,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 11 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 12 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -4397,7 +4397,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 12 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 11 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -4516,7 +4516,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 13 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 12 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -4635,7 +4635,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 12 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 13 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -4768,7 +4768,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 13 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 14 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -5209,7 +5209,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 14 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 13 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5328,7 +5328,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 15 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 14 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5433,7 +5433,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 14 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 15 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -5636,7 +5636,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 16 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 15 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5755,7 +5755,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 17 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 16 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5853,7 +5853,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 15 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 16 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -5958,7 +5958,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 16 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 17 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -6462,7 +6462,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 18 Dr. K. J. Jithendran CR-5 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 17 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -6560,7 +6560,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 17 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 18 Dr. K. J. Jithendran LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -6672,7 +6672,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 18 Dr. K. J. Jithendran LH-1 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 19 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -7071,7 +7071,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 19 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 18 Dr. K. J. Jithendran CR-5 (Feedback)"
     },
     {
       "Date": "",
@@ -7183,7 +7183,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 20 Dr. K. J. Jithendran CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 19 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -7288,7 +7288,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 19 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 20 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -7393,7 +7393,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 20 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 21 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
