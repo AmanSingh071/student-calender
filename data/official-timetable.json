@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-12T05:50:24.106Z",
-  "rowCount": 1068,
+  "fetchedAt": "2026-09-12T10:51:41.611Z",
+  "rowCount": 1069,
   "headers": [
     "Date",
     "Day",
@@ -197,7 +197,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 2 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
@@ -834,7 +834,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 3 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 2 Dr Karthikeyan Balakumar CR-5"
     },
     {
       "Date": "",
@@ -974,7 +974,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 4 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 3 Dr Karthikeyan Balakumar CR-5"
     },
     {
       "Date": "",
@@ -1604,7 +1604,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 5 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 4 Dr Karthikeyan Balakumar CR-5"
     },
     {
       "Date": "",
@@ -1709,7 +1709,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 6 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 5 Dr Karthikeyan Balakumar CR-5"
     },
     {
       "Date": "",
@@ -2276,7 +2276,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 7 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 6 Dr Karthikeyan Balakumar CR-5"
     },
     {
       "Date": "",
@@ -2402,7 +2402,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 8 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 7 Dr Karthikeyan Balakumar CR-5"
     },
     {
       "Date": "",
@@ -2780,6 +2780,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "AABI 8 Dr Karthikeyan Balakumar CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "TPP 8 Dr. K. J. Jithendran CR-5"
     },
     {
@@ -2853,7 +2860,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "11/Oct/26",
+      "Date": "11-Oct-2026",
       "Day": "Sunday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -3035,7 +3042,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "13-Oct-2026",
+      "Date": "13/Oct/26",
       "Day": "Tuesday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -3385,7 +3392,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "16-Oct-2026",
+      "Date": "16/Oct/26",
       "Day": "Friday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -4659,7 +4666,7 @@
       "Course-Section-Session#-Faculty-Classroom": "SDM 11 Prof. Sunil Chandran LH-1"
     },
     {
-      "Date": "30/Oct/26",
+      "Date": "30-Oct-2026",
       "Day": "Friday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
