@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-19T01:13:10.113Z",
+  "fetchedAt": "2026-09-19T05:56:55.143Z",
   "rowCount": 1067,
   "headers": [
     "Date",
@@ -2962,7 +2962,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PPAM 9 Dr Suranjan Das CR-3"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
@@ -3005,13 +3005,6 @@
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PPAM 10 Dr Suranjan Das CR-3"
     },
     {
       "Date": "",
@@ -3081,7 +3074,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PPAM 11 Dr Suranjan Das CR-3"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
@@ -3103,13 +3096,6 @@
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PPAM 12 Dr Suranjan Das CR-3"
     },
     {
       "Date": "",
@@ -4222,7 +4208,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": ""
+      "Course-Section-Session#-Faculty-Classroom": "PPAM 9 Dr Suranjan Das CR-3"
     },
     {
       "Date": "",
@@ -4279,6 +4265,13 @@
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "PPAM 10 Dr Suranjan Das CR-3"
     },
     {
       "Date": "27-Oct-2026",
@@ -4341,7 +4334,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": ""
+      "Course-Section-Session#-Faculty-Classroom": "PPAM 11 Dr Suranjan Das CR-3"
     },
     {
       "Date": "",
@@ -4384,6 +4377,13 @@
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "PPAM 12 Dr Suranjan Das CR-3"
     },
     {
       "Date": "",
