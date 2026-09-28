@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-28T06:58:32.243Z",
+  "fetchedAt": "2026-09-28T15:32:44.651Z",
   "rowCount": 1066,
   "headers": [
     "Date",
@@ -1225,13 +1225,6 @@
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FAMDM 4 Dr Srikanta Kundu CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
       "Section": "A",
       "Course-Section-Session#-Faculty-Classroom": "B2B A 5 Dr Shashi LH-1"
     },
@@ -1338,7 +1331,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FAMDM 5 Dr Srikanta Kundu CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FAMDM 4 Dr Srikanta Kundu CR-3"
     },
     {
       "Date": "",
@@ -1569,21 +1562,21 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PERF 3 Dr Parul Malik CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PERF 3 Dr Parul Malik CR-1"
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 4 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 2 Ms. Asha Jacob CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 2 Ms. Asha Jacob CR-1"
     },
     {
       "Date": "",
@@ -1621,7 +1614,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "29-Sep-2026",
+      "Date": "29/Sep/26",
       "Day": "Tuesday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -1681,14 +1674,14 @@
       "Day": "",
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AABI 5 Dr Karthikeyan Balakumar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 4 Dr Karthikeyan Balakumar CR-5"
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 3 Ms. Asha Jacob CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 3 Ms. Asha Jacob CR-1"
     },
     {
       "Date": "",
@@ -1709,14 +1702,14 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FAMDM 6 Dr Srikanta Kundu CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "FAMDM 5 Dr Srikanta Kundu CR-5"
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PERF 4 Dr Parul Malik CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PERF 4 Dr Parul Malik CR-1"
     },
     {
       "Date": "",
@@ -1765,7 +1758,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 1"
+      "Course-Section-Session#-Faculty-Classroom": "AABI 5 Dr Karthikeyan Balakumar CR-5"
     },
     {
       "Date": "",
@@ -1779,7 +1772,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ETS 5 Dr Sonali Shankar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "ETS 5 Dr Sonali Shankar LH-2"
     },
     {
       "Date": "",
@@ -1807,7 +1800,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 3 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 3 Dr Gaitree Gowreesunkar LH-2"
     },
     {
       "Date": "",
@@ -1821,7 +1814,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 5 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 5 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -1842,7 +1835,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 5 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 5 Dr Sanja Pattnayak LH-2"
     },
     {
       "Date": "",
@@ -1891,7 +1884,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ETS 6 Dr Sonali Shankar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "ETS 6 Dr Sonali Shankar CR-6"
     },
     {
       "Date": "",
@@ -1926,7 +1919,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 4 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 4 Dr Gaitree Gowreesunkar CR-5"
     },
     {
       "Date": "",
@@ -1940,7 +1933,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 6 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 6 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -1961,7 +1954,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 6 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 6 Dr Sanja Pattnayak LH-2"
     },
     {
       "Date": "",
@@ -1978,7 +1971,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "3/Oct/26",
+      "Date": "3-Oct-2026",
       "Day": "Saturday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -2010,7 +2003,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 6 Dr Sanjay Pareek CR-3 (Guest Lecture)"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 6 Dr Sanjay Pareek LH-2 (Guest Lecture)"
     },
     {
       "Date": "",
@@ -2024,7 +2017,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FAMDM 7 Dr Srikanta Kundu CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FAMDM 6 Dr Srikanta Kundu LH-2"
     },
     {
       "Date": "",
@@ -2052,7 +2045,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PERF 5 Dr Parul Malik CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PERF 5 Dr Parul Malik LH-2"
     },
     {
       "Date": "",
@@ -2150,7 +2143,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 5 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 5 Dr Gaitree Gowreesunkar LH-2"
     },
     {
       "Date": "",
@@ -2164,7 +2157,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 4 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 4 Dr Gaitree Gowreesunkar LH-2"
     },
     {
       "Date": "",
@@ -2186,6 +2179,13 @@
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "FAMDM 7 Dr Srikanta Kundu CR-5"
     },
     {
       "Date": "",
@@ -2220,7 +2220,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PPAM 5 Dr Suranjan Das CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PPAM 5 Dr Suranjan Das CR-5"
     },
     {
       "Date": "",
@@ -2248,7 +2248,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PPAM 6 Dr Suranjan Das CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PPAM 6 Dr Suranjan Das CR-5"
     },
     {
       "Date": "",
@@ -2269,7 +2269,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 5 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 5 Dr Gaitree Gowreesunkar LH-2"
     },
     {
       "Date": "",
@@ -2304,7 +2304,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PPAM 7 Dr Suranjan Das CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PPAM 7 Dr Suranjan Das CR-5"
     },
     {
       "Date": "",
@@ -2332,7 +2332,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PPAM 8 Dr Suranjan Das CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PPAM 8 Dr Suranjan Das CR-5"
     },
     {
       "Date": "",
@@ -2388,7 +2388,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 6 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 6 Dr Gaitree Gowreesunkar LH-2"
     },
     {
       "Date": "",
@@ -2409,7 +2409,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 7 Dr Sanjay Pareek CR-3 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 7 Dr Sanjay Pareek LH-2 (Feedback)"
     },
     {
       "Date": "",
@@ -2598,7 +2598,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 2"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 1"
     },
     {
       "Date": "",
@@ -3186,7 +3186,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 3"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 2"
     },
     {
       "Date": "",
@@ -3431,7 +3431,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 3"
     },
     {
       "Date": "",
@@ -4544,7 +4544,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 5"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 4"
     },
     {
       "Date": "",
@@ -5916,7 +5916,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
     },
     {
       "Date": "",
@@ -6483,7 +6483,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
     },
     {
       "Date": "",
@@ -6595,7 +6595,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
     },
     {
       "Date": "",
@@ -6875,7 +6875,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
     },
     {
       "Date": "",
@@ -7155,7 +7155,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 10"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
     },
     {
       "Date": "",
@@ -7316,7 +7316,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 11"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 10"
     },
     {
       "Date": "",
