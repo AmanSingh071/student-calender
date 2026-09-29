@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-29T08:35:23.027Z",
+  "fetchedAt": "2026-09-29T15:55:51.341Z",
   "rowCount": 1067,
   "headers": [
     "Date",
@@ -2540,6 +2540,20 @@
     {
       "Date": "8-Oct-2026",
       "Day": "Thursday",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "PROJ-Quiz 1 Dr Manish Sarkhel"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -2585,20 +2599,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "TPP 7 Dr. K. J. Jithendran CR-5"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "15:00 - 16:30",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 1"
     },
     {
       "Date": "",
@@ -3438,7 +3438,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 2"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 1"
     },
     {
       "Date": "",
@@ -4551,7 +4551,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 3"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 2"
     },
     {
       "Date": "",
@@ -5923,7 +5923,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 3"
     },
     {
       "Date": "",
@@ -6490,7 +6490,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
     },
     {
       "Date": "",
@@ -6602,7 +6602,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
     },
     {
       "Date": "",
@@ -6882,7 +6882,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
     },
     {
       "Date": "",
@@ -7162,7 +7162,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
     },
     {
       "Date": "",
@@ -7323,7 +7323,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
     },
     {
       "Date": "",
