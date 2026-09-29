@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-29T02:00:45.815Z",
-  "rowCount": 1066,
+  "fetchedAt": "2026-09-29T08:35:23.027Z",
+  "rowCount": 1067,
   "headers": [
     "Date",
     "Day",
@@ -2500,7 +2500,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 7 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 7 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -2612,7 +2612,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 8 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 8 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -3128,6 +3128,27 @@
     {
       "Date": "14-Oct-2026",
       "Day": "Wednesday",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "A",
+      "Course-Section-Session#-Faculty-Classroom": "B2B-Quiz A 1 Dr Shashi"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "B",
+      "Course-Section-Session#-Faculty-Classroom": "B2B-Quiz B 1 Dr Shashi"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -3177,20 +3198,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "15:00 - 16:30",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 2"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -3200,7 +3207,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 9 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 9 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -3431,7 +3438,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 3"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 2"
     },
     {
       "Date": "",
@@ -4092,7 +4099,7 @@
       "Course-Section-Session#-Faculty-Classroom": "B2B A 13 Dr Shashi LH-1"
     },
     {
-      "Date": "25/Oct/26",
+      "Date": "25-Oct-2026",
       "Day": "Sunday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -4481,7 +4488,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 11 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 11 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -4544,7 +4551,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 4"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 3"
     },
     {
       "Date": "",
@@ -4600,7 +4607,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 12 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 12 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -5412,7 +5419,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 14 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 14 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -5720,7 +5727,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 15 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 15 Dr Rinki Dahiya LH-1"
     },
     {
       "Date": "",
@@ -5825,7 +5832,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 16 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 16 Dr Rinki Dahiya LH-1"
     },
     {
       "Date": "",
@@ -5916,7 +5923,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
     },
     {
       "Date": "",
@@ -6399,7 +6406,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 17 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 17 Dr Rinki Dahiya LH-1"
     },
     {
       "Date": "",
@@ -6483,7 +6490,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
     },
     {
       "Date": "",
@@ -6497,7 +6504,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 18 Dr Rinki Dahiya CR-3 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "NM 18 Dr Rinki Dahiya LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -6595,7 +6602,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
     },
     {
       "Date": "",
@@ -6875,7 +6882,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
     },
     {
       "Date": "",
@@ -7092,7 +7099,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 19 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 19 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -7155,7 +7162,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 8"
     },
     {
       "Date": "",
@@ -7204,7 +7211,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 20 Dr Rinki Dahiya CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "NM 20 Dr Rinki Dahiya LH-2"
     },
     {
       "Date": "",
@@ -7316,7 +7323,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 10"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 9"
     },
     {
       "Date": "",
