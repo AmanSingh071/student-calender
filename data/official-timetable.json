@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-09-30T23:54:10.269Z",
-  "rowCount": 1067,
+  "fetchedAt": "2026-10-01T06:00:17.313Z",
+  "rowCount": 1068,
   "headers": [
     "Date",
     "Day",
@@ -2554,6 +2554,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "PS-Quiz 1 Dr Sanja Pattnayak"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -4652,7 +4659,7 @@
       "Course-Section-Session#-Faculty-Classroom": "SDM 11 Prof. Sunil Chandran LH-1"
     },
     {
-      "Date": "30-Oct-2026",
+      "Date": "30/Oct/26",
       "Day": "Friday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
