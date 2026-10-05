@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-05T00:58:46.285Z",
-  "rowCount": 1069,
+  "fetchedAt": "2026-10-05T07:06:54.567Z",
+  "rowCount": 1070,
   "headers": [
     "Date",
     "Day",
@@ -2169,6 +2169,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "STM 5 Dr Gaitree Gowreesunkar CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -2269,7 +2276,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 5 Dr Gaitree Gowreesunkar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "STM 6 Dr Gaitree Gowreesunkar CR-5"
     },
     {
       "Date": "",
@@ -2388,7 +2395,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 6 Dr Gaitree Gowreesunkar CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "STM 7 Dr Gaitree Gowreesunkar CR-5"
     },
     {
       "Date": "",
@@ -2913,7 +2920,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "M&A 9 Dr Utkarsh Majmudar LH-5"
+      "Course-Section-Session#-Faculty-Classroom": "M&A 9 Dr Utkarsh Majmudar LH-1"
     },
     {
       "Date": "",
@@ -2927,7 +2934,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "M&A 10 Dr Utkarsh Majmudar LH-5"
+      "Course-Section-Session#-Faculty-Classroom": "M&A 10 Dr Utkarsh Majmudar CR-5"
     },
     {
       "Date": "",
@@ -2997,7 +3004,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 7 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 8 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3021,7 +3028,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "13-Oct-2026",
+      "Date": "13/Oct/26",
       "Day": "Tuesday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -3130,7 +3137,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 8 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 9 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3385,7 +3392,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "16-Oct-2026",
+      "Date": "16/Oct/26",
       "Day": "Friday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -3599,7 +3606,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 9 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 10 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3725,7 +3732,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 10 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 11 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -4257,7 +4264,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 11 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 12 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -4383,7 +4390,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 12 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 13 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -4446,7 +4453,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 13 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 14 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5076,7 +5083,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 14 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 15 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5202,7 +5209,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 15 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 16 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5352,7 +5359,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "5-Nov-2026",
+      "Date": "5/Nov/26",
       "Day": "Thursday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -5636,7 +5643,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 16 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 17 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -6217,7 +6224,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 17 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 18 Dr Gaitree Gowreesunkar CR-3 (Feedback)"
     },
     {
       "Date": "",
@@ -6322,7 +6329,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 18 Dr Gaitree Gowreesunkar CR-3 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "STM 19 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -6917,7 +6924,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 19 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 20 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -7022,7 +7029,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 20 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 21 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
