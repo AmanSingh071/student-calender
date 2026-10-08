@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-08T01:59:06.774Z",
-  "rowCount": 1069,
+  "fetchedAt": "2026-10-08T09:02:10.534Z",
+  "rowCount": 1071,
   "headers": [
     "Date",
     "Day",
@@ -5741,6 +5741,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ATM 15 Dr. K. J. Jithendran LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "NM 15 Dr Rinki Dahiya LH-1"
     },
     {
@@ -5846,6 +5853,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ATM 16 Dr. K. J. Jithendran LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "NM 16 Dr Rinki Dahiya LH-1"
     },
     {
@@ -5870,7 +5884,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "13-Nov-2026",
+      "Date": "13/Nov/26",
       "Day": "Friday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -5895,7 +5909,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 15 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 17 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -6000,7 +6014,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 16 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 18 Dr. K. J. Jithendran LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -6425,6 +6439,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "TPP 18 Dr. K. J. Jithendran CR-5 (Feedback)"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -6490,7 +6511,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 18 Dr. K. J. Jithendran CR-5 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 19 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -6519,6 +6540,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "NM 18 Dr Rinki Dahiya LH-1 (Feedback)"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "TPP 20 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -6574,7 +6602,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 17 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 19 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -6686,7 +6714,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 18 Dr. K. J. Jithendran LH-1 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 20 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -7071,6 +7099,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "ETS 19 Dr Sonali Shankar CR-3"
     },
     {
@@ -7079,13 +7114,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FRM 19 Dr Bhanu Pratap Singh LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 19 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -7183,6 +7211,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "ETS 20 Dr Sonali Shankar CR-3"
     },
     {
@@ -7191,13 +7226,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FRM 20 Dr Bhanu Pratap Singh LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 20 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -7300,13 +7328,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 19 Dr. K. J. Jithendran LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "AA-I 19 Dr Kiran Kumar Paidipati LH-1"
@@ -7401,13 +7422,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "AMR 20 Dr Devika Vashisht CR-5"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 20 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
