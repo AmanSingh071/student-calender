@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-09T02:13:27.611Z",
+  "fetchedAt": "2026-10-09T09:09:49.498Z",
   "rowCount": 1071,
   "headers": [
     "Date",
@@ -2687,13 +2687,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 7 Dr. K. J. Jithendran LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -3005,6 +2998,13 @@
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ATM 7 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -3667,6 +3667,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "PROM 10 Dr Vikas Kumar LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "10:45 - 12:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -3865,7 +3872,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PROM 10 Dr Vikas Kumar LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "PROM 11 Dr Vikas Kumar LH-1"
     },
     {
       "Date": "",
@@ -3970,7 +3977,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PROM 11 Dr Vikas Kumar LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "PROM 12 Dr Vikas Kumar LH-1"
     },
     {
       "Date": "",
@@ -4082,7 +4089,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PROM 12 Dr Vikas Kumar LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "PROM 13 Dr Vikas Kumar LH-1"
     },
     {
       "Date": "",
@@ -4768,7 +4775,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PROM 13 Dr Vikas Kumar LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "PROM 14 Dr Vikas Kumar LH-1"
     },
     {
       "Date": "",
@@ -4901,7 +4908,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PROM 14 Dr Vikas Kumar LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "PROM 15 Dr Vikas Kumar LH-1"
     },
     {
       "Date": "",
@@ -5352,7 +5359,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "5-Nov-2026",
+      "Date": "5/Nov/26",
       "Day": "Thursday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -5530,8 +5537,8 @@
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PROM 15 Dr Vikas Kumar LH-1"
+      "Section": "B",
+      "Course-Section-Session#-Faculty-Classroom": "AMS B 16 Dr Amit Tiwari LH-5"
     },
     {
       "Date": "",
@@ -5553,13 +5560,6 @@
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "AMS B 16 Dr Amit Tiwari LH-5"
     },
     {
       "Date": "",
