@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-10T00:55:28.292Z",
+  "fetchedAt": "2026-10-10T07:12:22.796Z",
   "rowCount": 1071,
   "headers": [
     "Date",
@@ -2799,13 +2799,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "IMPA 9 Dr Surender Rao Komera LH-2"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -2815,7 +2808,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "IMPA 10 Dr Surender Rao Komera LH-2"
+      "Course-Section-Session#-Faculty-Classroom": "IMPA 9 Dr Surender Rao Komera LH-2"
     },
     {
       "Date": "",
@@ -2823,6 +2816,13 @@
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "IMPA 10 Dr Surender Rao Komera LH-2"
     },
     {
       "Date": "",
