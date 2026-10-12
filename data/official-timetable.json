@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-12T00:35:56.913Z",
-  "rowCount": 1071,
+  "fetchedAt": "2026-10-12T07:24:54.862Z",
+  "rowCount": 1073,
   "headers": [
     "Date",
     "Day",
@@ -2976,6 +2976,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "AABI 9 Dr Karthikeyan Balakumar LH-2"
     },
     {
@@ -2984,13 +2991,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "MPPP 9 Dr Ashish Goel LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 7 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3116,6 +3116,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "AABI 10 Dr Karthikeyan Balakumar LH-1"
     },
     {
@@ -3124,13 +3131,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "MPPP 10 Dr Ashish Goel LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 8 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3285,13 +3285,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "PAFG 9 Dr Alekh Gour LH-5"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 8 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3597,13 +3590,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 9 Dr Gaitree Gowreesunkar CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -3732,7 +3718,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 10 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 7 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3767,7 +3753,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 9 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 8 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3844,7 +3830,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 10 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 9 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -3887,6 +3873,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "MPPP 12 Dr Ashish Goel LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "STM 8 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "23-Oct-2026",
@@ -4102,8 +4095,15 @@
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
-      "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "B2B B 13 Dr Shashi LH-1"
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "STM 9 Dr Gaitree Gowreesunkar CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "A",
+      "Course-Section-Session#-Faculty-Classroom": "B2B A 13 Dr Shashi LH-1"
     },
     {
       "Date": "",
@@ -4116,8 +4116,8 @@
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
-      "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "B2B A 13 Dr Shashi LH-1"
+      "Section": "B",
+      "Course-Section-Session#-Faculty-Classroom": "B2B B 13 Dr Shashi LH-1"
     },
     {
       "Date": "25-Oct-2026",
@@ -4264,7 +4264,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 11 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 10 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -4390,7 +4390,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 12 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 11 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -4453,7 +4453,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 13 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 12 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -4495,7 +4495,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 11 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 10 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -4614,7 +4614,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 12 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 11 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5083,7 +5083,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 14 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 13 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5098,6 +5098,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FMI 9 Dr. Srinivas Subbarao Pasumarti CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 12 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5209,7 +5216,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "STM 15 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 14 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5224,6 +5231,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FMI 11 Dr. Srinivas Subbarao Pasumarti CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "TBCCM 13 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5307,7 +5321,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TBCCM 13 Dr Gaitree Gowreesunkar CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "STM 15 Dr Gaitree Gowreesunkar CR-3"
     },
     {
       "Date": "",
@@ -5359,7 +5373,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "5/Nov/26",
+      "Date": "5-Nov-2026",
       "Day": "Thursday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
@@ -5884,7 +5898,7 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
-      "Date": "13/Nov/26",
+      "Date": "13-Nov-2026",
       "Day": "Friday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
