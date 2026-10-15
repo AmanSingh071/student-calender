@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-15T04:44:54.561Z",
+  "fetchedAt": "2026-10-15T09:59:44.387Z",
   "rowCount": 1073,
   "headers": [
     "Date",
@@ -3464,6 +3464,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ESM 8 Ms. Kamal Gill CR-5"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -3474,13 +3481,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "Cultural Event"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ESM 8 Ms. Kamal Gill CR-5"
     },
     {
       "Date": "",
@@ -4243,7 +4243,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "MPPP 13 Dr Ashish Goel LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "MPPP 13 Dr Ashish Goel LH-1 (Guest Lecture)"
     },
     {
       "Date": "",
@@ -4369,7 +4369,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "MPPP 14 Dr Ashish Goel LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "MPPP 14 Dr Ashish Goel LH-1 (Guest Lecture)"
     },
     {
       "Date": "",
@@ -5349,7 +5349,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 13 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 13 Dr Sanja Pattnayak CR-3 (Guest Lecture)"
     },
     {
       "Date": "",
@@ -5760,13 +5760,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 15 Dr Rinki Dahiya LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -5874,7 +5867,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 16 Dr Rinki Dahiya LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "NM 15 Dr Rinki Dahiya LH-1"
     },
     {
       "Date": "",
@@ -6448,7 +6441,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 17 Dr Rinki Dahiya LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "NM 16 Dr Rinki Dahiya LH-1"
     },
     {
       "Date": "",
@@ -6553,7 +6546,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 18 Dr Rinki Dahiya LH-1 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "NM 17 Dr Rinki Dahiya LH-1"
     },
     {
       "Date": "",
@@ -7155,7 +7148,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "NM 19 Dr Rinki Dahiya LH-2"
+      "Course-Section-Session#-Faculty-Classroom": "NM 18 Dr Rinki Dahiya LH-2 (Feedback)"
     },
     {
       "Date": "",
@@ -7247,6 +7240,13 @@
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "NM 19 Dr Rinki Dahiya CR-5"
     },
     {
       "Date": "",
