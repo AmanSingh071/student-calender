@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-22T10:15:46.813Z",
+  "fetchedAt": "2026-10-22T15:31:00.271Z",
   "rowCount": 1073,
   "headers": [
     "Date",
@@ -5090,13 +5090,6 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 9 Dr. Srinivas Subbarao Pasumarti CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "TBCCM 11 Dr Gaitree Gowreesunkar CR-3"
     },
     {
@@ -5105,13 +5098,6 @@
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 10 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "3-Nov-2026",
@@ -5223,13 +5209,6 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 11 Dr. Srinivas Subbarao Pasumarti CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "TBCCM 12 Dr Gaitree Gowreesunkar CR-3"
     },
     {
@@ -5238,13 +5217,6 @@
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 12 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "4-Nov-2026",
@@ -5902,7 +5874,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 13 Dr. Srinivas Subbarao Pasumarti CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 9 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -5923,7 +5895,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 14 Dr. Srinivas Subbarao Pasumarti CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 10 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -6007,7 +5979,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 15 Dr. Srinivas Subbarao Pasumarti CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 11 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -6028,7 +6000,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 16 Dr. Srinivas Subbarao Pasumarti CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 12 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -6588,7 +6560,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 17 Dr. Srinivas Subbarao Pasumarti CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 13 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -6616,7 +6588,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 18 Dr. Srinivas Subbarao Pasumarti CR-3 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 14 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -6707,7 +6679,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 19 Dr. Srinivas Subbarao Pasumarti CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 15 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -6728,7 +6700,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FMI 20 Dr. Srinivas Subbarao Pasumarti CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 16 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -6967,6 +6939,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FAMDM 17 Dr Srikanta Kundu CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "SDM 19 Dr Karthikeyan Balakumar LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -7323,7 +7302,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "SDM 19 Dr Karthikeyan Balakumar LH-1 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "SDM 20 Dr Karthikeyan Balakumar LH-1"
     },
     {
       "Date": "",
@@ -7338,6 +7317,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "AMR 19 Dr Devika Vashisht CR-5"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "FMI 17 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -7398,6 +7384,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "FMI 18 Dr. Srinivas Subbarao Pasumarti CR-3 (Feedback)"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -7414,14 +7407,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "FAMDM 20 Dr Srikanta Kundu CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "SDM 20 Dr Karthikeyan Balakumar LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "FMI 19 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -7436,6 +7422,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "AMR 20 Dr Devika Vashisht CR-5"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "FMI 20 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
       "Date": "",
@@ -7478,6 +7471,13 @@
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "FAMDM 20 Dr Srikanta Kundu CR-3"
     },
     {
       "Date": "",
