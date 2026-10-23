@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-22T23:25:51.251Z",
-  "rowCount": 1073,
+  "fetchedAt": "2026-10-23T04:55:53.094Z",
+  "rowCount": 1074,
   "headers": [
     "Date",
     "Day",
@@ -3900,7 +3900,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AMR 10 Dr Devika Vashisht CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AMR 10 Dr Devika Vashisht LH-1"
     },
     {
       "Date": "",
@@ -5634,6 +5634,13 @@
     {
       "Date": "",
       "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "SCAS 19 Dr M. Pachayappan LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -6861,7 +6868,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "SCAS 19 Dr M. Pachayappan LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "SCAS 20 Dr M. Pachayappan LH-1"
     },
     {
       "Date": "",
@@ -6973,7 +6980,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "SCAS 20 Dr M. Pachayappan LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "SCAS 21 Dr M. Pachayappan LH-1"
     },
     {
       "Date": "",
