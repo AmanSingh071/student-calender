@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-23T04:55:53.094Z",
-  "rowCount": 1074,
+  "fetchedAt": "2026-10-23T10:08:02.029Z",
+  "rowCount": 1077,
   "headers": [
     "Date",
     "Day",
@@ -4166,7 +4166,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "M&A 13 Dr Utkarsh Majmudar LH-5"
+      "Course-Section-Session#-Faculty-Classroom": "M&A 13 Dr Utkarsh Majmudar LH-1"
     },
     {
       "Date": "",
@@ -4180,7 +4180,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "M&A 14 Dr Utkarsh Majmudar LH-5"
+      "Course-Section-Session#-Faculty-Classroom": "M&A 14 Dr Utkarsh Majmudar CR-3"
     },
     {
       "Date": "",
@@ -5986,6 +5986,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ESM 16 Dr Vikrant Kaushal CR-5"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FMI 11 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
@@ -6042,14 +6049,14 @@
       "Day": "",
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 16 Dr Kiran Kumar Paidipati LH-1"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ESM 16 Dr Vikrant Kaushal CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 16 Dr Kiran Kumar Paidipati LH-1"
     },
     {
       "Date": "",
@@ -6686,6 +6693,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ESM 18 Dr Vikrant Kaushal CR-5 (Feedback)"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FMI 15 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
@@ -6735,14 +6749,14 @@
       "Day": "",
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 18 Dr Kiran Kumar Paidipati LH-1 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ESM 18 Dr Vikrant Kaushal CR-5 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 18 Dr Kiran Kumar Paidipati LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -7414,6 +7428,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ESM 20 Dr Vikrant Kaushal CR-5"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FMI 19 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
@@ -7456,14 +7477,14 @@
       "Day": "",
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 20 Dr Kiran Kumar Paidipati LH-1"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ESM 20 Dr Vikrant Kaushal CR-5"
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 20 Dr Kiran Kumar Paidipati LH-1"
     },
     {
       "Date": "",
