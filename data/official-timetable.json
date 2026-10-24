@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-24T07:21:13.757Z",
+  "fetchedAt": "2026-10-24T12:43:33.823Z",
   "rowCount": 1077,
   "headers": [
     "Date",
@@ -5571,13 +5571,6 @@
     {
       "Date": "",
       "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "SCAS 18 Dr M. Pachayappan LH-1 (Feedback)"
-    },
-    {
-      "Date": "",
-      "Day": "",
       "Timings (24 hrs. format)": "10:45 - 12:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -5630,13 +5623,6 @@
       "Timings (24 hrs. format)": "16:45 - 18:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "SCAS 19 Dr M. Pachayappan LH-1"
     },
     {
       "Date": "",
@@ -6882,7 +6868,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "SCAS 20 Dr M. Pachayappan LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "SCAS 18 Dr M. Pachayappan LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -6994,7 +6980,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "SCAS 21 Dr M. Pachayappan LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "SCAS 19 Dr M. Pachayappan LH-1"
     },
     {
       "Date": "",
@@ -7065,6 +7051,13 @@
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "SCAS 20 Dr M. Pachayappan LH-1"
     },
     {
       "Date": "",
@@ -7506,6 +7499,13 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FAMDM 20 Dr Srikanta Kundu CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "SCAS 21 Dr M. Pachayappan LH-1"
     },
     {
       "Date": "",
