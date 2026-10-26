@@ -1,6 +1,6 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-26T01:14:21.136Z",
+  "fetchedAt": "2026-10-26T06:20:23.529Z",
   "rowCount": 1077,
   "headers": [
     "Date",
@@ -6859,6 +6859,13 @@
     {
       "Date": "23-Nov-2026",
       "Day": "Monday",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "AMR-Quiz 1 Dr Devika Vashisht"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -6904,13 +6911,6 @@
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
     },
     {
       "Date": "",
@@ -7204,7 +7204,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
     },
     {
       "Date": "",
@@ -7372,7 +7372,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 7"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
     },
     {
       "Date": "",
