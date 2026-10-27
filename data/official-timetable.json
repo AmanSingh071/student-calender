@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-27T06:19:55.414Z",
-  "rowCount": 1077,
+  "fetchedAt": "2026-10-27T13:25:34.414Z",
+  "rowCount": 1076,
   "headers": [
     "Date",
     "Day",
@@ -4522,13 +4522,6 @@
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 11 Dr Sanja Pattnayak CR-3"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
       "Section": "A",
       "Course-Section-Session#-Faculty-Classroom": "B2B A 15 Dr Shashi LH-1"
     },
@@ -4542,6 +4535,20 @@
     {
       "Date": "29-Oct-2026",
       "Day": "Thursday",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "FRM-Quiz 1 Dr Bhanu Pratap Singh"
+    },
+    {
+      "Date": "",
+      "Day": "",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
@@ -4552,20 +4559,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "MC 12 Dr Pragya Bhawsar LH-5"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "10:45 - 12:15",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSLot 1"
     },
     {
       "Date": "",
@@ -4636,13 +4629,6 @@
       "Timings (24 hrs. format)": "18:45 - 20:15",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 12 Dr Sanja Pattnayak CR-3"
     },
     {
       "Date": "",
@@ -5251,6 +5237,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ATM 14 Dr. K. J. Jithendran LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "ETS 14 Dr Sonali Shankar CR-3"
     },
     {
@@ -5259,13 +5252,6 @@
       "Timings (24 hrs. format)": "",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FRM 14 Dr Bhanu Pratap Singh LH-1"
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "TPP 15 Dr. K. J. Jithendran CR-5"
     },
     {
       "Date": "",
@@ -5321,7 +5307,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 13 Dr Sanja Pattnayak CR-3 (Guest Lecture)"
+      "Course-Section-Session#-Faculty-Classroom": "PS 11 Dr Sanja Pattnayak CR-3 (Guest Lecture)"
     },
     {
       "Date": "",
@@ -5440,7 +5426,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 14 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 12 Dr Sanja Pattnayak CR-3"
     },
     {
       "Date": "",
@@ -5489,7 +5475,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 14 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "TPP 15 Mr Someswara Koundinya LH-1 (Guest Lecture)"
     },
     {
       "Date": "",
@@ -5579,8 +5565,8 @@
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
-      "Section": "B",
-      "Course-Section-Session#-Faculty-Classroom": "MLBA B 18 Dr Alekh Gour LH-1 (Feedback)"
+      "Section": "A",
+      "Course-Section-Session#-Faculty-Classroom": "MLBA A 18 Dr Alekh Gour LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -5593,8 +5579,15 @@
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
-      "Section": "A",
-      "Course-Section-Session#-Faculty-Classroom": "MLBA A 18 Dr Alekh Gour LH-1 (Feedback)"
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "ATM 15 Dr. K. J. Jithendran CR-3"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "B",
+      "Course-Section-Session#-Faculty-Classroom": "MLBA B 18 Dr Alekh Gour LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -5720,7 +5713,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 15 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 16 Dr. K. J. Jithendran LH-1"
     },
     {
       "Date": "",
@@ -5734,7 +5727,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 15 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 13 Dr Sanja Pattnayak CR-3"
     },
     {
       "Date": "",
@@ -5825,7 +5818,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 16 Dr. K. J. Jithendran CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 17 Dr. K. J. Jithendran CR-3"
     },
     {
       "Date": "",
@@ -5846,7 +5839,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 16 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 14 Dr Sanja Pattnayak CR-3"
     },
     {
       "Date": "",
@@ -5874,14 +5867,14 @@
       "Day": "",
       "Timings (24 hrs. format)": "10:45 - 12:15",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AMR 15 Dr Devika Vashisht CR-5"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 17 Dr. K. J. Jithendran LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "AMR 15 Dr Devika Vashisht CR-5"
     },
     {
       "Date": "",
@@ -5923,7 +5916,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 2"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 1"
     },
     {
       "Date": "",
@@ -6434,7 +6427,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 17 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 15 Dr Sanja Pattnayak CR-3"
     },
     {
       "Date": "",
@@ -6504,7 +6497,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 3"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 2"
     },
     {
       "Date": "",
@@ -6539,7 +6532,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 18 Dr Sanja Pattnayak CR-3 (Feedback)"
+      "Course-Section-Session#-Faculty-Classroom": "PS 16 Dr Sanja Pattnayak CR-3"
     },
     {
       "Date": "",
@@ -6623,7 +6616,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 3"
     },
     {
       "Date": "",
@@ -6700,7 +6693,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "ATM 20 Dr. K. J. Jithendran LH-1 (Guest Lecture)"
+      "Course-Section-Session#-Faculty-Classroom": "ATM 20 Mr Arnab Mukherjee LH-1 (Guest Lecture)"
     },
     {
       "Date": "",
@@ -7162,7 +7155,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 19 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 17 Dr Sanja Pattnayak CR-3"
     },
     {
       "Date": "",
@@ -7204,7 +7197,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 4"
     },
     {
       "Date": "",
@@ -7281,7 +7274,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "PS 20 Dr Sanja Pattnayak CR-3"
+      "Course-Section-Session#-Faculty-Classroom": "PS 18 Dr Sanja Pattnayak CR-3 (Feedback)"
     },
     {
       "Date": "",
@@ -7372,7 +7365,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 6"
+      "Course-Section-Session#-Faculty-Classroom": "QuizSlot 5"
     },
     {
       "Date": "",
