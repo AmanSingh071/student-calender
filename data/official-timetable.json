@@ -1,7 +1,7 @@
 {
   "source": "https://script.google.com/macros/s/AKfycbyALiIAKX30Vrwqb6fOvxXR5i66vnfe4-DCfhnEAY_g59FX_OyaobPYkSwZ2sRwX62fAQ/exec",
-  "fetchedAt": "2026-10-28T02:20:54.867Z",
-  "rowCount": 1076,
+  "fetchedAt": "2026-10-28T09:44:20.039Z",
+  "rowCount": 1077,
   "headers": [
     "Date",
     "Day",
@@ -5086,6 +5086,13 @@
       "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 14 Dr Kiran Kumar Paidipati LH-1"
+    },
+    {
       "Date": "3-Nov-2026",
       "Day": "Tuesday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
@@ -5489,7 +5496,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 14 Dr Kiran Kumar Paidipati LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 15 Dr Kiran Kumar Paidipati LH-1"
     },
     {
       "Date": "",
@@ -5860,6 +5867,13 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 16 Dr Kiran Kumar Paidipati LH-1"
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
       "Course-Section-Session#-Faculty-Classroom": "FMI 9 Dr. Srinivas Subbarao Pasumarti CR-3"
     },
     {
@@ -5888,7 +5902,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 15 Dr Kiran Kumar Paidipati LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 17 Dr Kiran Kumar Paidipati LH-1"
     },
     {
       "Date": "",
@@ -5958,7 +5972,7 @@
       "Day": "Saturday",
       "Timings (24 hrs. format)": "09:00 - 10:30",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": ""
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 18 Dr Kiran Kumar Paidipati LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -6035,7 +6049,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 16 Dr Kiran Kumar Paidipati LH-1"
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 19 Dr Kiran Kumar Paidipati LH-1"
     },
     {
       "Date": "",
@@ -6225,6 +6239,13 @@
       "Timings (24 hrs. format)": "20:30 - 22:00",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
+    },
+    {
+      "Date": "",
+      "Day": "",
+      "Timings (24 hrs. format)": "",
+      "Section": "",
+      "Course-Section-Session#-Faculty-Classroom": "AA-I 20 Dr Kiran Kumar Paidipati LH-1"
     },
     {
       "Date": "17-Nov-2026",
@@ -6588,7 +6609,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 17 Dr Kiran Kumar Paidipati LH-1"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
@@ -6729,13 +6750,6 @@
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 18 Dr Kiran Kumar Paidipati LH-1 (Feedback)"
     },
     {
       "Date": "",
@@ -7337,7 +7351,7 @@
       "Day": "",
       "Timings (24 hrs. format)": "12:30 - 14:00",
       "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 19 Dr Kiran Kumar Paidipati LH-1"
+      "Course-Section-Session#-Faculty-Classroom": ""
     },
     {
       "Date": "",
@@ -7464,13 +7478,6 @@
       "Timings (24 hrs. format)": "15:00 - 16:30",
       "Section": "",
       "Course-Section-Session#-Faculty-Classroom": ""
-    },
-    {
-      "Date": "",
-      "Day": "",
-      "Timings (24 hrs. format)": "",
-      "Section": "",
-      "Course-Section-Session#-Faculty-Classroom": "AA-I 20 Dr Kiran Kumar Paidipati LH-1"
     },
     {
       "Date": "",
